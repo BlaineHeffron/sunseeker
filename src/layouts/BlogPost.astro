@@ -1,0 +1,214 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${title} | SunSeeker Blog`}
+      description={description}
+      type="article"
+      publishedTime={pubDate.toISOString()}
+      modifiedTime={updatedDate?.toISOString()}
+    />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": title,
+      "description": description,
+      "datePublished": pubDate.toISOString(),
+      "dateModified": updatedDate?.toISOString() || pubDate.toISOString(),
+      "author": {
+        "@type": "Organization",
+        "name": "SunSeeker Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SunSeeker",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://blaineheffron.github.io/sunseeker/logo.png"
+        }
+      }
+    })} />
+  </head>
+
+  <body>
+    <Header />
+    <main class="blog-post">
+      <article>
+        <header class="post-header">
+          <div class="post-meta">
+            <FormattedDate date={pubDate} />
+            {updatedDate && (
+              <span class="updated">
+                (Updated: <FormattedDate date={updatedDate} />)
+              </span>
+            )}
+          </div>
+          <h1>{title}</h1>
+          <p class="post-description">{description}</p>
+        </header>
+
+        <div class="post-content prose">
+          <slot />
+        </div>
+
+        <footer class="post-footer">
+          <div class="share-section">
+            <p>Found this helpful? Share it!</p>
+          </div>
+          <nav class="post-nav">
+            <a href="/sunseeker/blog" class="btn btn-secondary">← Back to Blog</a>
+            <a href="/sunseeker/" class="btn btn-primary">Get SunSeeker</a>
+          </nav>
+        </footer>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .blog-post {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .post-header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    border-bottom: 1px solid var(--warm-gray);
+    margin-bottom: 2rem;
+  }
+
+  .post-meta {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .updated {
+    font-style: italic;
+    margin-left: 0.5rem;
+  }
+
+  .post-header h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--text-dark), var(--grass-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .post-description {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .post-content {
+    padding: 2rem 0;
+  }
+
+  .post-content :global(h2) {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--grass-green);
+  }
+
+  .post-content :global(h3) {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .post-content :global(ul),
+  .post-content :global(ol) {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .post-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .post-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+
+  .post-content :global(th),
+  .post-content :global(td) {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--warm-gray);
+  }
+
+  .post-content :global(th) {
+    background: var(--warm-gray);
+    font-weight: 700;
+  }
+
+  .post-content :global(tr:hover td) {
+    background: var(--soft-cream);
+  }
+
+  .post-footer {
+    border-top: 1px solid var(--warm-gray);
+    padding: 2rem 0;
+    margin-top: 2rem;
+  }
+
+  .share-section {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .share-section p {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .post-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .post-header {
+      padding: 2rem 0 1.5rem;
+    }
+
+    .post-header h1 {
+      font-size: 1.75rem;
+    }
+
+    .post-description {
+      font-size: 1.1rem;
+    }
+
+    .post-nav {
+      flex-direction: column;
+    }
+
+    .post-nav .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>

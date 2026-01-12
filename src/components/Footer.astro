@@ -1,0 +1,170 @@
+---
+import { GITHUB_URL, APP_STORE_URL, PLAY_STORE_URL } from '../consts';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="/sunseeker/" class="footer-logo">
+        <span>☀️</span> SunSeeker
+      </a>
+      <p>Maximize your solar energy output with intelligent panel positioning.</p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-section">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/sunseeker/#features">Features</a></li>
+          <li><a href="/sunseeker/#how-it-works">How It Works</a></li>
+          <li><a href={APP_STORE_URL}>iOS App</a></li>
+          <li><a href={PLAY_STORE_URL}>Android App</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/sunseeker/blog">Blog</a></li>
+          <li><a href="/sunseeker/about">About</a></li>
+          <li><a href={GITHUB_URL} target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/sunseeker/privacy">Privacy Policy</a></li>
+          <li><a href="/sunseeker/terms">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {currentYear} SunSeeker. All rights reserved.</p>
+    <p class="eco-message">Built with clean energy in mind 🌱</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: var(--text-dark);
+    color: var(--warm-gray);
+    padding: 4rem 1.5rem 2rem;
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-brand {
+    max-width: 300px;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pure-white);
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo:hover {
+    color: var(--sunshine-yellow);
+  }
+
+  .footer-brand p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-section h4 {
+    color: var(--pure-white);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-section li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+
+  .footer-section a:hover {
+    color: var(--sunshine-yellow);
+  }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+
+  .eco-message {
+    color: var(--fresh-green) !important;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .footer-links {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-links {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

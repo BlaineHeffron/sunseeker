@@ -1,0 +1,217 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const title = 'About SunSeeker - Our Mission to Maximize Solar Energy';
+const description = 'Learn about SunSeeker, the free app helping solar panel owners optimize their energy production through intelligent positioning and real-time sun tracking.';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Header />
+    <main class="about-page">
+      <section class="about-hero">
+        <h1>About SunSeeker</h1>
+        <p class="lead">
+          We believe everyone with solar panels deserves to get the most from their investment.
+        </p>
+      </section>
+
+      <section class="about-content">
+        <div class="content-block">
+          <h2>Our Mission</h2>
+          <p>
+            SunSeeker was created with a simple goal: make solar panel optimization accessible to everyone.
+            Whether you're a homeowner with a few rooftop panels or managing a commercial solar installation,
+            getting the right angle can increase your energy production by up to 25%.
+          </p>
+          <p>
+            We built SunSeeker to take the guesswork out of solar positioning. Using your device's sensors
+            and location data, we calculate the optimal panel angle in real-time—no complex formulas or
+            expensive consultants required.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <h2>Why We Built This</h2>
+          <p>
+            Solar energy is one of the most promising solutions to our climate challenges. Yet many solar
+            installations underperform simply because panels aren't positioned optimally. We saw an opportunity
+            to help millions of solar panel owners generate more clean energy with the equipment they already have.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <h2>What Makes SunSeeker Different</h2>
+          <ul class="feature-list">
+            <li>
+              <strong>Truly Free</strong> - No premium tiers, no ads, no data selling. Just a useful tool.
+            </li>
+            <li>
+              <strong>Privacy-First</strong> - Your location data stays on your device. We don't track you.
+            </li>
+            <li>
+              <strong>Science-Based</strong> - Our calculations use established solar positioning formulas.
+            </li>
+            <li>
+              <strong>Open Source</strong> - Transparent development. Anyone can review our code.
+            </li>
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h2>The Team</h2>
+          <p>
+            SunSeeker is built by a small team of developers and solar enthusiasts who believe technology
+            should serve people and the planet. We're constantly improving the app based on user feedback
+            and the latest solar research.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <h2>Get Involved</h2>
+          <p>
+            SunSeeker is open source. We welcome contributions, bug reports, and feature suggestions.
+          </p>
+          <div class="cta-buttons">
+            <a href="https://github.com/BlaineHeffron/sunseeker" class="btn btn-secondary" target="_blank" rel="noopener">
+              View on GitHub
+            </a>
+            <a href="/sunseeker/blog" class="btn btn-primary">
+              Read Our Blog
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-stats">
+        <div class="stat">
+          <span class="stat-number">25%</span>
+          <span class="stat-label">Potential energy increase with optimal positioning</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Free, forever</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Ads or tracking</span>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .about-page {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .about-hero {
+    text-align: center;
+    padding: 4rem 0 3rem;
+  }
+
+  .about-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .about-content {
+    padding: 2rem 0;
+  }
+
+  .content-block {
+    margin-bottom: 3rem;
+  }
+
+  .content-block h2 {
+    color: var(--grass-green);
+    margin-bottom: 1rem;
+  }
+
+  .content-block p {
+    line-height: 1.8;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .feature-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--warm-gray);
+  }
+
+  .feature-list li:last-child {
+    border-bottom: none;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 3rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid var(--warm-gray);
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--sunshine-yellow);
+    line-height: 1;
+  }
+
+  .stat-label {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .about-hero {
+      padding: 2rem 0;
+    }
+
+    .about-hero h1 {
+      font-size: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+    }
+  }
+</style>

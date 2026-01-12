@@ -1,0 +1,11 @@
+# robots.txt for SunSeeker
+# https://blaineheffron.github.io/sunseeker/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://blaineheffron.github.io/sunseeker/sitemap-index.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
