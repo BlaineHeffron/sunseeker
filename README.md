@@ -1,62 +1,67 @@
-# Astro Starter Kit: Blog
+# SunSeeker Website
 
-```sh
-npm create astro@latest -- --template blog
+Marketing site and blog for SunSeeker, built with Astro and deployed to GitHub Pages.
+
+## Tech Stack
+
+- Astro 5
+- TypeScript (strict mode)
+- Playwright (E2E tests)
+- GitHub Actions (CI + Pages deploy)
+
+## Requirements
+
+- Node.js 20+
+- npm 10+
+
+## Local Development
+
+```bash
+npm ci
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The site is served at `http://localhost:4321/sunseeker/`.
 
-Features:
+## Quality Gates
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+Run the full local validation pipeline:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```bash
+npm run validate
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Available scripts:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- `npm run assets:generate`: generate required social/PWA image assets in `public/`
+- `npm run typecheck`: run TypeScript checks
+- `npm run test`: run Playwright suite
+- `npm run test:ci`: run Playwright in CI mode (single worker)
+- `npm run build`: production build
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+## Deployment
 
-Any static assets, like images, can be placed in the `public/` directory.
+Deploys automatically from `main` via `.github/workflows/deploy.yml`.
 
-## 🧞 Commands
+The deployment job enforces:
 
-All commands are run from the root of the project, from a terminal:
+1. dependency install
+2. Playwright browser install
+3. typecheck
+4. E2E tests
+5. production build
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Only passing builds are published to GitHub Pages.
 
-## 👀 Want to learn more?
+## Legal
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Privacy policy: `/sunseeker/privacy`
+- Terms of service: `/sunseeker/terms`
 
-## Credit
+## Security
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+See `SECURITY.md` for reporting guidance.
+
+## Tracking
+
+Enterprise readiness follow-up items are tracked in `TODO.md`.

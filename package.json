@@ -2,8 +2,17 @@
   "name": "sunseeker",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "astro dev",
+    "assets:generate": "node scripts/generate-assets.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "playwright test",
+    "test:ci": "playwright test --workers=1",
+    "validate": "npm run typecheck && npm run build && npm run test:ci",
+    "prebuild": "npm run assets:generate",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -14,5 +23,8 @@
     "@astrojs/sitemap": "^3.6.1",
     "astro": "^5.16.8",
     "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0"
   }
 }

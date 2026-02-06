@@ -34,8 +34,8 @@ export const BRAND_COLORS = {
 };
 
 // App store links (update when available)
-export const APP_STORE_URL = '#'; // iOS App Store link
-export const PLAY_STORE_URL = '#'; // Google Play Store link
+export const APP_STORE_URL = '/sunseeker/download#ios';
+export const PLAY_STORE_URL = '/sunseeker/download#android';
 
 // Social links
 export const GITHUB_URL = 'https://github.com/BlaineHeffron/sunseeker';

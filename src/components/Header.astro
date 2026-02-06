@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE, GITHUB_URL } from '../consts';
+import { APP_STORE_URL, GITHUB_URL } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
@@ -24,7 +24,7 @@ import HeaderLink from './HeaderLink.astro';
           ></path>
         </svg>
       </a>
-      <a href="/sunseeker/#" class="btn btn-primary btn-sm">Get the App</a>
+      <a href={APP_STORE_URL} class="btn btn-primary btn-sm">Get the App</a>
     </div>
     <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span>

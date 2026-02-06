@@ -77,4 +77,4 @@ The SunSeeker app takes the guesswork out of panel positioning:
 
 Finding the optimal solar panel angle doesn't have to be complicated. Start with your latitude as a baseline, adjust seasonally if possible, and use tools like SunSeeker to fine-tune your setup. Even small improvements in positioning can add up to significant energy gains over the lifetime of your solar installation.
 
-Ready to optimize your panels? [Download SunSeeker](#) and start maximizing your solar energy today.
+Ready to optimize your panels? [Download SunSeeker](/sunseeker/download) and start maximizing your solar energy today.

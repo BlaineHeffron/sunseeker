@@ -1,0 +1,72 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const title = 'Privacy Policy | SunSeeker';
+const description = 'Privacy policy for the SunSeeker website and app.';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Header />
+    <main class="policy-page">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Last updated: February 6, 2026</p>
+
+      <h2>Scope</h2>
+      <p>
+        This policy applies to the SunSeeker website and related mobile app services.
+      </p>
+
+      <h2>Data We Collect</h2>
+      <p>
+        We collect only the data required to provide core functionality, operate the service, and
+        respond to support requests.
+      </p>
+
+      <h2>How We Use Data</h2>
+      <p>
+        Data is used for service delivery, reliability, security, and abuse prevention. We do not
+        sell personal data.
+      </p>
+
+      <h2>Retention</h2>
+      <p>
+        We retain data only as long as necessary for operational, legal, and security purposes.
+      </p>
+
+      <h2>Your Rights</h2>
+      <p>
+        You may request access, correction, or deletion of your data where applicable by law.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        For privacy requests, open an issue on the project repository and mark it as a privacy
+        request.
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .policy-page {
+    max-width: 840px;
+    margin: 0 auto;
+  }
+
+  .policy-page h1 {
+    margin-top: 2rem;
+  }
+
+  .meta {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+</style>
