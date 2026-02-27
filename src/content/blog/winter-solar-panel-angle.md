@@ -1,65 +1,99 @@
 ---
-title: 'Winter solar panel angle: should you adjust?'
-description: 'The sun sits lower in winter. Does that mean you should change your panel angle? Here is how to think about it, and when adjusting actually helps.'
+title: 'Do solar panels work in winter? Yes, and here''s how to help'
+description: 'Solar panels produce less in winter but still work well. Learn how snow, cold, and panel angle affect output, and when seasonal tilt adjustments are worth it.'
 pubDate: 'Feb 27 2026'
+updatedDate: 'Feb 27 2026'
 heroImage: '../../assets/winter-solar-panel-tilt-angle.jpg'
 heroAlt: 'Solar panels with steep winter tilt angle for low sun'
 ---
 
-Every winter, people ask whether they should adjust their solar panels. The sun sits lower in the sky, so a steeper panel angle catches more direct light. Makes sense.
+Every December I get the same question from people who just installed solar: "My production dropped 40%. Is something broken?"
 
-But should you actually climb up there and change it?
+Nothing is broken. Winter is just harder on solar panels than most people expect. Shorter days, lower sun angles, cloud cover, and occasionally snow all cut into production. But "less" doesn't mean "none." A 6 kW system in Boston still produces about 12-15 kWh on a clear winter day. That's real power.
 
-## The math
+The question isn't whether your panels work in winter. It's whether there's anything you can do about the drop.
 
-In winter, the sun's highest point is lower than in summer. At 40° latitude, the midwinter sun peaks around 26° above the horizon. In midsummer, it peaks around 73°.
+## Why winter production falls
 
-A panel tilted to catch summer sun well will be too flat for winter. Some of the winter light will hit the panel at a shallow angle and lose effectiveness.
+Three things happen at once.
 
-The standard winter adjustment: add about 15° to your latitude. At 40° latitude, that means a 55° winter tilt instead of the year-round 40°.
+**Days get shorter.** In December at 40 degrees latitude, you get about 9 hours of daylight versus 15 in June. That alone cuts your potential production by 40%.
 
-## How much does it actually help?
+**The sun sits lower.** At the same latitude, the midwinter sun peaks around 26 degrees above the horizon. In midsummer, it's around 73 degrees. When sunlight hits a flat panel at a shallow angle, less energy gets absorbed and more bounces off.
 
-Seasonal adjustment can increase annual production by 5-10%. Maybe a bit more at high latitudes, a bit less near the equator.
+**Weather gets worse.** More clouds, more precipitation, more hours of diffuse (scattered) light instead of direct beam. Your panels still produce with clouds, just less. Expect 10-25% of rated output on an overcast day versus 80-100% in full sun.
 
-The catch: winter days are also shorter, and weather is often worse. Even with perfect tilt, your winter production will be lower than summer. You're optimizing a smaller slice of the pie.
+Here's the counterintuitive part: cold temperatures actually help. Solar cells are semiconductors, and they perform better when cool. A 25-degree day in January produces more per hour of sunlight than a 95-degree day in July, all else equal. Panel efficiency drops roughly 0.3-0.5% for every degree Celsius above 25C. On a summer scorcher, you might lose 5-8% to heat.
 
-## When adjusting makes sense
+So winter's problem isn't the cold. It's the short days and low sun angle.
 
-**Yes, adjust if:**
-- You have ground-mounted panels with easy access
-- Your mounting system is designed for adjustment
-- You're at high latitude (above 45°) where winter sun is very low
-- You genuinely don't mind doing it four times a year
+## Should you adjust your panel angle for winter?
 
-**Probably skip it if:**
+This is the question I get asked most. The sun is lower, so a steeper tilt should catch more direct light. And it does.
+
+The standard recommendation: add about 15 degrees to your latitude for winter. At 40 degrees latitude, that means a 55-degree winter tilt instead of the year-round 40 degrees.
+
+Research from a 2025 study published in Energy Science & Engineering confirms that seasonal tilt adjustments can increase annual production by 8-9%. A panel fixed at the optimal winter angle captures 81-88% of the energy compared to full tracking, according to data compiled by solarpaneltilt.com.
+
+But here's what the math doesn't tell you: you're optimizing a smaller slice of the pie. Winter produces maybe 25-30% of your annual total. Squeezing 8% more out of that 25% is about a 2% annual gain. Real, but small.
+
+**Adjust if:**
+- You have ground-mounted panels with easy tilt access
+- Your mounting hardware was designed for adjustment (some brackets have seasonal notches)
+- You're above 45 degrees latitude, where the winter sun angle difference is extreme
+- You don't mind doing it four times a year
+
+**Skip it if:**
 - Your panels are on a steep roof
-- Adjusting requires tools or risk of falling
-- You're below 35° latitude (smaller seasonal difference)
-- You'll forget and leave it at winter angle until July
+- Adjusting means ladders and fall risk
+- You're below 35 degrees latitude (the seasonal difference is smaller)
+- You'll forget and leave the winter angle on until July (I've done this)
 
-## What about snow?
+## Solar panels and snow
 
-Steeper winter angles have a side benefit: snow slides off more easily. Panels at 40°+ shed snow reasonably well. Panels at 25° can stay covered for days.
+Snow on your panels blocks light. That's obvious. What's less obvious is how much it matters and how to deal with it.
 
-If you're in a snowy climate, the self-cleaning effect of a steep winter angle might matter more than the tilt optimization itself.
+**Light snow melts fast.** Solar panels are dark, absorb heat, and often sit at an angle. A dusting of snow usually slides off or melts within a day. Panels with a tilt of 35 degrees or steeper shed snow reasonably well on their own.
 
-## The app reminder feature
+**Heavy accumulation sticks.** After a major storm, panels at lower angles can stay covered for days. A 6 kW system covered in snow produces zero. If that lasts a week after every storm, the winter losses add up.
 
-SunSeeker sends optional notifications around each solstice and equinox. If you want to adjust seasonally, the reminders help you remember.
+**The albedo bonus.** Snow on the ground around your panels acts like a mirror. Fresh snow reflects 80-90% of sunlight. If you have bifacial panels, snow cover on nearby ground can actually boost rear-side production. Some bifacial installations in snowy climates see their best days right after a storm clears, when panels are clean and snow-covered ground is bouncing light everywhere.
 
-If you don't want to adjust, turn off the reminders and set your panels to your latitude. You're not leaving huge amounts of energy on the table—seasonal adjustment helps but isn't required.
+**Snow removal tips:**
+- Let small amounts melt naturally
+- Use a soft foam-head roof rake for heavy accumulation (never metal tools or sharp edges)
+- Don't use hot water, as the thermal shock can crack tempered glass
+- A steeper tilt angle (40 degrees or more) helps snow slide off before it piles up
 
-## What I actually do
+One thing I've noticed: the worry about snow usually exceeds the actual losses. In most climates, snow covers panels for a handful of days per winter. The production lost during those days is small relative to the annual total. Unless you're somewhere that gets consistent heavy snowfall with overcast skies for weeks, snow management is not worth obsessing over.
 
-I have ground-mounted panels with an adjustable tilt. I change the angle twice a year: once in late fall when I notice the sun getting low, and once in spring when I get around to it.
+## A winter routine that actually works
 
-I don't hit the exact optimal dates. It doesn't matter much. The difference between adjusting on December 21st versus "sometime in November when I remember" is marginal.
+My ground-mounted panels have an adjustable tilt. Here's what I actually do, not the theoretical optimum, but what works in practice:
 
-If your panels are on the roof and adjusting means a ladder, I'd probably set them at latitude and leave them. The gains don't justify the risk or hassle for most people.
+Late October or early November, when the sun starts feeling low, I walk out and steepen the angle. I don't check the calendar. I don't calculate the exact date. The difference between adjusting on October 15 versus November 10 is maybe 1-2% of a month's production. Not worth stressing about.
+
+March or early April, when spring arrives, I flatten them back. Again, approximate timing.
+
+Between adjustments, I'll clear heavy snow with a roof rake when it's convenient. Light dustings I ignore entirely.
+
+SunSeeker sends optional reminders around each solstice and equinox if you want them. Useful if you're the type who forgets (I am). But if the reminders stress you out, turn them off. Set your panels to your latitude and leave them. The annual difference between "optimized seasonal adjustment" and "set it and forget it" is single-digit percentages.
+
+## How much does winter really cost you?
+
+For a typical residential system at 40 degrees latitude:
+
+- **Summer month (June):** 25-30 kWh/day from a 6 kW system
+- **Winter month (December):** 10-15 kWh/day from the same system
+- **Annual impact:** Winter months (Nov-Feb) produce roughly 25-30% of your yearly total
+- **Seasonal adjustment gain:** 5-10% more annual production (about 2-4% if you only count the winter months you're optimizing)
+
+That seasonal gain at $0.15/kWh might be worth $30-60 per year. Worth doing if it's easy. Not worth risking a fall from your roof.
 
 ## The bottom line
 
-Winter tilt adjustment works. But so does "set it to your latitude and forget it." The difference in annual production is single digits. Do what's practical for your situation.
+Solar panels work in winter. They produce less, but they still contribute real power. Cold temperatures help efficiency. Snow is mostly a short-term nuisance. And adjusting your panel angle helps, but the gains are modest enough that you shouldn't feel bad about skipping it.
 
-[Download SunSeeker](/sunseeker/download)
+If you have an easy setup, adjust seasonally. If you don't, set your tilt to your latitude and move on. The panels will keep working either way.
+
+[Download SunSeeker](/sunseeker/download) | [Find your optimal angle](/blog/optimal-solar-panel-angle-guide) | [Solar energy basics](/blog/understanding-solar-energy-basics)
