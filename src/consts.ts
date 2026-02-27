@@ -1,9 +1,10 @@
 // SunSeeker - Solar Panel Positioning App
 // Global constants for SEO and branding
 
-export const SITE_TITLE = 'SunSeeker - Optimize Your Solar Panel Positioning';
-export const SITE_DESCRIPTION = 'SunSeeker helps you find the perfect angle for your solar panels. Maximize energy output with real-time sun tracking, seasonal adjustments, and location-based recommendations. Free app for iOS and Android.';
-export const SITE_KEYWORDS = 'solar panel positioning, solar panel angle, sun tracking app, solar energy optimization, solar panel tilt calculator, renewable energy app, solar panel installation, maximize solar output';
+export const SITE_TITLE = 'SunSeeker - Solar Panel Angle Calculator';
+export const SITE_DESCRIPTION = 'Free app that calculates your solar panel tilt angle. Uses your location, shows seasonal adjustments, works with bifacial panels. Point your phone camera at your panels to see the target angle.';
+
+export const SITE_KEYWORDS = 'solar panel angle calculator, solar panel tilt calculator, best angle for solar panels, bifacial solar panel, solar panel positioning app, seasonal solar panel adjustment';
 
 // Brand colors from CLAUDE.md
 export const BRAND_COLORS = {

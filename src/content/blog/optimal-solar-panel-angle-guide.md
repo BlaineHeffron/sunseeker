@@ -1,80 +1,73 @@
 ---
-title: 'The Complete Guide to Finding Your Optimal Solar Panel Angle'
-description: 'Learn how to calculate and adjust your solar panel tilt angle for maximum energy production throughout the year. Includes formulas, seasonal adjustments, and practical tips.'
+title: 'How to find your solar panel angle'
+description: 'The tilt angle affects how much power your panels produce. Here is how to figure out the right angle for your location and why you might adjust it seasonally.'
 pubDate: 'Jan 10 2026'
 ---
 
-Getting the right angle for your solar panels can increase energy production by up to 25%. In this comprehensive guide, we'll walk you through everything you need to know about solar panel positioning.
+Your solar panels produce the most power when sunlight hits them straight on. The angle between the panel and the ground—the tilt—determines how close to "straight on" you can get throughout the day.
 
-## Why Panel Angle Matters
+The sun's path changes with seasons and latitude. So the "best" angle depends on where you are and what you're optimizing for.
 
-Solar panels generate the most electricity when sunlight hits them perpendicular to their surface. As the sun moves across the sky throughout the day and changes position with the seasons, the optimal angle for your panels changes too.
+## The simple rule
 
-## The Basic Formula
+A decent starting point: set your tilt angle equal to your latitude.
 
-For a fixed-tilt system, a good starting point is:
+Live at 40° north (New York, Madrid, Beijing)? Try 40° tilt. At 30° (Houston, Cairo)? Try 30°.
 
-**Optimal Tilt Angle = Your Latitude**
+This gives you a reasonable year-round average. Not perfect for any single day, but not bad overall.
 
-For example, if you live at 40° latitude (like New York or Madrid), a 40° tilt angle is a reasonable year-round compromise.
+## Seasonal adjustments
 
-## Seasonal Adjustments
+If you can change your panel angle, you can do better than the latitude rule.
 
-If you can adjust your panels seasonally, here's what to aim for:
+In summer, the sun climbs high. Flatter panels (less tilt) catch more light. In winter, the sun stays low. Steeper panels work better.
 
-| Season | Angle Adjustment |
-|--------|------------------|
-| Summer | Latitude - 15° |
-| Winter | Latitude + 15° |
-| Spring/Fall | Latitude |
+A rough guide:
+- Summer: latitude minus 15°
+- Winter: latitude plus 15°
+- Spring and fall: latitude
 
-### Why Adjust Seasonally?
+At 40° latitude, that means:
+- Summer: 25° tilt
+- Winter: 55° tilt
+- Spring/fall: 40° tilt
 
-In summer, the sun is higher in the sky, so a flatter panel angle captures more direct sunlight. In winter, the sun sits lower on the horizon, requiring a steeper angle.
+Is it worth the hassle of climbing up there four times a year? Depends on your setup. Adjustable mounts make it easier. Fixed mounts mean you're stuck with one angle, so pick something close to your latitude and don't worry about it.
 
-## Factors That Affect Optimal Angle
+## Direction matters too
 
-### 1. Your Location
-The closer you are to the equator, the flatter your panels should be. Near the poles, steeper angles work better.
+Tilt is only half the equation. Direction (azimuth) is the other half.
 
-### 2. Your Energy Goals
-- **Maximize annual production**: Use latitude as your angle
-- **Maximize winter production**: Add 15° to latitude
-- **Maximize summer production**: Subtract 15° from latitude
+In the northern hemisphere, panels should face south. In the southern hemisphere, north. This catches the most sun as it crosses the sky.
 
-### 3. Roof Constraints
-Sometimes your roof angle limits your options. Even a non-optimal angle will still generate significant power—you might lose only 5-10% compared to the ideal angle.
+East-facing or west-facing panels still work, but you'll lose some output—maybe 10-20% depending on how far off true south/north you are.
 
-### 4. Snow and Weather
-In snowy climates, a steeper angle (at least 40°) helps snow slide off naturally, preventing buildup that blocks sunlight.
+## What about flat roofs?
 
-## Using SunSeeker to Find Your Perfect Angle
+If your roof is flat or nearly flat, you're already at 0° tilt. Low-angle panels still produce power, but less than tilted ones. At higher latitudes, the loss from a flat installation can be significant.
 
-The SunSeeker app takes the guesswork out of panel positioning:
+The common solution: put panels on tilted racks. This adds cost but usually pays off in higher production, especially if you're above 35° latitude.
 
-1. **Automatic location detection** - No need to look up your latitude
-2. **Real-time sun position** - See exactly where the sun is right now
-3. **AR visualization** - Point your camera at your panels to see the optimal angle overlay
-4. **Seasonal recommendations** - Get notifications when it's time to adjust
+## Where SunSeeker helps
 
-## Common Mistakes to Avoid
+The app does the latitude calculation automatically using your phone's GPS. It also adjusts for the current date, so you get a seasonally-appropriate angle.
 
-1. **Ignoring azimuth (direction)** - Panels should generally face true south in the Northern Hemisphere
-2. **Not accounting for shading** - Even partial shade dramatically reduces output
-3. **Setting and forgetting** - If you can adjust seasonally, you should
-4. **Over-engineering** - Small angle differences (1-2°) won't significantly impact production
+If you can adjust your panels, the app will remind you at each equinox and solstice. If you can't adjust them, at least you'll know what you're leaving on the table.
 
-## Quick Reference by Latitude
+The camera feature lets you point your phone at the panel and see visually whether you're close to the target angle. Easier than eyeballing it with a protractor.
 
-| Latitude | Summer | Winter | Year-Round |
-|----------|--------|--------|------------|
-| 25° | 10° | 40° | 25° |
-| 35° | 20° | 50° | 35° |
-| 45° | 30° | 60° | 45° |
-| 55° | 40° | 70° | 55° |
+## Common mistakes
 
-## Conclusion
+**Ignoring shade.** A perfectly-angled panel that sits in shade half the day produces less than a poorly-angled panel in full sun. Look at your site before obsessing over angles.
 
-Finding the optimal solar panel angle doesn't have to be complicated. Start with your latitude as a baseline, adjust seasonally if possible, and use tools like SunSeeker to fine-tune your setup. Even small improvements in positioning can add up to significant energy gains over the lifetime of your solar installation.
+**Over-optimizing.** Being 2-3° off from optimal costs you very little. Don't stress about precision you can't measure.
 
-Ready to optimize your panels? [Download SunSeeker](/sunseeker/download) and start maximizing your solar energy today.
+**Forgetting about azimuth.** Tilt gets all the attention, but a panel facing west instead of south loses more output than one that's 10° off the optimal tilt.
+
+## The bottom line
+
+For most people: set tilt equal to latitude, face the equator, and move on with your life. If you have adjustable mounts and enjoy tinkering, seasonal adjustments help. If you have bifacial panels, read the bifacial guide—there are extra considerations.
+
+The app makes the calculation easy. The hard part is usually physical: getting up there and adjusting the hardware.
+
+[Download SunSeeker](/sunseeker/download)

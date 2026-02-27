@@ -6,35 +6,43 @@ import { SITE_DESCRIPTION, SITE_TITLE, APP_STORE_URL, PLAY_STORE_URL } from '../
 
 const features = [
   {
-    icon: '🌞',
-    title: 'Real-Time Sun Tracking',
-    description: 'Track the sun\'s position throughout the day and get instant panel angle recommendations.',
+    icon: '📐',
+    title: 'Angle Calculator',
+    description: 'Enter your location, get your tilt angle. The math accounts for latitude and time of year.',
   },
   {
     icon: '📍',
-    title: 'Location-Based Optimization',
-    description: 'Automatic adjustments based on your GPS coordinates and local solar conditions.',
+    title: 'Uses Your Location',
+    description: 'GPS tells us where you are. We calculate the angle from there. No lookup tables needed.',
   },
   {
     icon: '📅',
-    title: 'Seasonal Adjustments',
-    description: 'Get optimal tilt angles for every season to maximize your annual energy production.',
+    title: 'Seasonal Reminders',
+    description: 'A notification at each equinox and solstice. Adjusting quarterly can add 10-15% to your annual output.',
+  },
+  {
+    icon: '⚡',
+    title: 'Bifacial Panel Mode',
+    description: 'Bifacial panels need different setup—ground reflectivity matters, elevation matters. We have a mode for that.',
+  },
+  {
+    icon: '📷',
+    title: 'Camera Positioning',
+    description: 'Point your phone at your panels. The screen shows which way to tilt.',
   },
   {
     icon: '📊',
-    title: 'Energy Estimates',
-    description: 'See estimated energy gains when you optimize your panel positioning.',
+    title: 'Tracking Advice',
+    description: 'Fixed mount? Single-axis? Dual-axis? We tell you what makes sense for your latitude.',
   },
-  {
-    icon: '🔔',
-    title: 'Smart Reminders',
-    description: 'Receive notifications when it\'s time to adjust your panels for peak efficiency.',
-  },
-  {
-    icon: '🌿',
-    title: 'Eco Impact Tracker',
-    description: 'Track your environmental impact and CO2 savings over time.',
-  },
+];
+
+const competitors = [
+  { feature: 'Mobile app with camera positioning', sunseeker: true, others: false },
+  { feature: 'Bifacial panel mode', sunseeker: true, others: false },
+  { feature: 'Ground surface recommendations', sunseeker: true, others: false },
+  { feature: 'Seasonal adjustment reminders', sunseeker: true, others: false },
+  { feature: 'Works offline', sunseeker: true, others: false },
 ];
 ---
 
@@ -53,12 +61,7 @@ const features = [
         "price": "0",
         "priceCurrency": "USD"
       },
-      "description": SITE_DESCRIPTION,
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "150"
-      }
+      "description": SITE_DESCRIPTION
     })} />
   </head>
   <body>
@@ -67,10 +70,11 @@ const features = [
       <!-- Hero Section -->
       <section class="hero">
         <div class="hero-content">
-          <h1>Find the Perfect Angle for Your Solar Panels</h1>
+          <h1>Figure out the right angle for your solar panels</h1>
           <p class="hero-subtitle">
-            SunSeeker uses real-time sun tracking and location data to help you
-            maximize your solar energy output. Simple, accurate, and free.
+            Free app that calculates your solar panel angle based on location and season.
+            Point your phone at your panels, see how to adjust them.
+            Works for standard and bifacial panels.
           </p>
           <div class="hero-buttons">
             <a href={APP_STORE_URL} class="btn btn-primary">
@@ -100,10 +104,9 @@ const features = [
 
       <!-- Features Section -->
       <section class="features section" id="features">
-        <h2>Everything You Need to Optimize Solar Energy</h2>
+        <h2>What the app does</h2>
         <p class="section-subtitle">
-          Whether you're a homeowner with rooftop panels or managing a solar farm,
-          SunSeeker gives you the tools to maximize every ray of sunshine.
+          It calculates angles. It uses your phone's camera and sensors. It reminds you when to adjust.
         </p>
         <div class="features-grid">
           {features.map((feature) => (
@@ -140,10 +143,58 @@ const features = [
         </div>
       </section>
 
+      <!-- Bifacial Panel Section -->
+      <section class="bifacial section" id="bifacial">
+        <div class="bifacial-content">
+          <div class="bifacial-text">
+            <h2>Bifacial panels are different</h2>
+            <p>
+              Bifacial panels capture light on both sides. The back side picks up whatever bounces off the ground beneath them.
+              This means the ground surface matters. The height off the ground matters. Most calculators ignore this.
+            </p>
+            <p>SunSeeker has a bifacial mode that accounts for:</p>
+            <ul class="bifacial-features">
+              <li>Ground reflectivity — white gravel reflects more than grass, which reflects more than asphalt</li>
+              <li>Panel height — too low and the back can't see much reflected light</li>
+              <li>Vertical mounting — in some locations, vertical east-west panels work better than tilted ones</li>
+            </ul>
+            <a href="/sunseeker/blog/bifacial-solar-panel-guide" class="btn btn-secondary">Read the bifacial guide</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comparison Section -->
+      <section class="comparison section section-alt" id="compare">
+        <h2>How this compares to web calculators</h2>
+        <p class="section-subtitle">
+          Most angle calculators are websites that do basic math. Here's what they typically don't do.
+        </p>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th class="highlight">SunSeeker</th>
+                <th>Web Calculators</th>
+              </tr>
+            </thead>
+            <tbody>
+              {competitors.map((row) => (
+                <tr>
+                  <td>{row.feature}</td>
+                  <td class="highlight">{row.sunseeker ? '✓' : '✗'}</td>
+                  <td>{row.others ? '✓' : '✗'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <!-- CTA Section -->
       <section class="cta section">
-        <h2>Start Maximizing Your Solar Energy Today</h2>
-        <p>Join thousands of solar panel owners who are getting more from their investment.</p>
+        <h2>Get your panel angle right</h2>
+        <p>Download free. Takes 30 seconds to calculate your optimal tilt.</p>
         <div class="cta-buttons">
           <a href={APP_STORE_URL} class="btn btn-primary">Download for iOS</a>
           <a href={PLAY_STORE_URL} class="btn btn-primary">Download for Android</a>
@@ -385,6 +436,111 @@ const features = [
   /* Blog Preview */
   .blog-preview {
     text-align: center;
+  }
+
+  /* Bifacial Section */
+  .bifacial {
+    background: linear-gradient(135deg, var(--soft-sage) 0%, var(--light-gold) 100%);
+    border-radius: 24px;
+    padding: 4rem 2rem;
+    margin: 2rem 0;
+  }
+
+  .bifacial-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--grass-green);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .bifacial-text h2 {
+    margin-bottom: 1rem;
+  }
+
+  .bifacial-text p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .bifacial-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .bifacial-features li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-dark);
+  }
+
+  .bifacial-features li::before {
+    content: '⚡';
+    position: absolute;
+    left: 0;
+  }
+
+  /* Comparison Section */
+  .comparison {
+    text-align: center;
+  }
+
+  .comparison-table-wrapper {
+    overflow-x: auto;
+    margin-top: 2rem;
+  }
+
+  .comparison-table {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--warm-gray);
+  }
+
+  .comparison-table th {
+    background: var(--text-dark);
+    color: white;
+    font-weight: 600;
+  }
+
+  .comparison-table th.highlight {
+    background: var(--grass-green);
+  }
+
+  .comparison-table td.highlight {
+    background: rgba(124, 179, 66, 0.1);
+    color: var(--grass-green);
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+
+  .comparison-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .comparison-table tbody td:not(.highlight) {
+    color: var(--text-muted);
   }
 
   /* Responsive */
