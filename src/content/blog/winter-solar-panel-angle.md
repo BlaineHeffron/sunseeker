@@ -2,6 +2,8 @@
 title: 'Winter solar panel angle: should you adjust?'
 description: 'The sun sits lower in winter. Does that mean you should change your panel angle? Here is how to think about it, and when adjusting actually helps.'
 pubDate: 'Feb 27 2026'
+heroImage: '../../assets/winter-solar-panel-tilt-angle.jpg'
+heroAlt: 'Solar panels with steep winter tilt angle for low sun'
 ---
 
 Every winter, people ask whether they should adjust their solar panels. The sun sits lower in the sky, so a steeper panel angle catches more direct light. Makes sense.

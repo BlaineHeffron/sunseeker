@@ -12,8 +12,27 @@ export default defineConfig({
     mdx(),
     sitemap({
       changefreq: 'weekly',
-      priority: 0.7,
       lastmod: new Date(),
+      serialize(item) {
+        // Set priority based on page type
+        if (item.url.endsWith('/sunseeker/')) {
+          item.priority = 1.0;
+          item.changefreq = 'weekly';
+        } else if (item.url.includes('/blog/') && !item.url.endsWith('/blog/')) {
+          item.priority = 0.8;
+          item.changefreq = 'monthly';
+        } else if (item.url.endsWith('/download/')) {
+          item.priority = 0.9;
+          item.changefreq = 'monthly';
+        } else if (item.url.endsWith('/blog/')) {
+          item.priority = 0.7;
+          item.changefreq = 'weekly';
+        } else {
+          item.priority = 0.5;
+          item.changefreq = 'monthly';
+        }
+        return item;
+      },
     }),
   ],
   build: {

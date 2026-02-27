@@ -2,6 +2,8 @@
 title: '10 Essential Solar Panel Maintenance Tips for Maximum Efficiency'
 description: 'Keep your solar panels running at peak performance with these proven maintenance tips. Learn how to clean, inspect, and optimize your solar installation.'
 pubDate: 'Jan 08 2026'
+heroImage: '../../assets/solar-panel-maintenance-cleaning.jpg'
+heroAlt: 'Solar panel cleaning and maintenance for efficiency'
 ---
 
 Solar panels are remarkably low-maintenance, but a little care goes a long way. Here are 10 essential tips to keep your solar system running at maximum efficiency.

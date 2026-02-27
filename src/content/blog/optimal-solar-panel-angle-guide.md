@@ -2,6 +2,8 @@
 title: 'How to find your solar panel angle'
 description: 'The tilt angle affects how much power your panels produce. Here is how to figure out the right angle for your location and why you might adjust it seasonally.'
 pubDate: 'Jan 10 2026'
+heroImage: '../../assets/solar-panel-angle-calculator-app.jpg'
+heroAlt: 'Solar panel angle calculator showing optimal tilt for rooftop installation'
 ---
 
 Your solar panels produce the most power when sunlight hits them straight on. The angle between the panel and the ground—the tilt—determines how close to "straight on" you can get throughout the day.

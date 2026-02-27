@@ -2,6 +2,8 @@
 title: 'Solar Energy 101: Understanding How Solar Panels Work'
 description: 'A beginner-friendly guide to solar energy. Learn how photovoltaic cells convert sunlight into electricity and what factors affect solar panel efficiency.'
 pubDate: 'Jan 05 2026'
+heroImage: '../../assets/solar-energy-photovoltaic-basics.jpg'
+heroAlt: 'Photovoltaic solar cells converting sunlight to electricity'
 ---
 
 Curious about how solar panels actually work? This guide breaks down the science of solar energy into easy-to-understand concepts.

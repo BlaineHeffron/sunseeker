@@ -2,6 +2,8 @@
 title: 'Bifacial solar panels: what actually matters for installation'
 description: 'Bifacial panels capture light on both sides. That changes the installation math. Here is what to think about: ground surface, height, and when vertical mounting makes sense.'
 pubDate: 'Feb 27 2026'
+heroImage: '../../assets/bifacial-solar-panel-installation.jpg'
+heroAlt: 'Bifacial solar panel installation with ground reflection'
 ---
 
 Bifacial solar panels have cells on both sides. The front works like any panel. The back picks up light that bounces off the ground.
