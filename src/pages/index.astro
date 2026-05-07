@@ -452,6 +452,18 @@ const faqs = [
     50% { opacity: 0.8; }
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    .sun,
+    .rays span {
+      animation: none;
+    }
+
+    :global(.btn:hover),
+    :global(.card:hover) {
+      transform: none;
+    }
+  }
+
   /* Calculator Preview */
   .calculator-preview {
     display: grid;
