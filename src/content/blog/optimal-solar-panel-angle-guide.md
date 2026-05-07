@@ -115,12 +115,12 @@ The app does the latitude calculation automatically using your phone's GPS. It a
 
 The camera feature lets you point your phone at your panel and see visually whether you're close to the target angle. Easier than holding a protractor against a roof-mounted panel.
 
-If you have bifacial panels, switch to bifacial mode. The angle calculation adjusts slightly for rear-side capture. Read the [bifacial guide](/blog/bifacial-solar-panel-guide) for details on how ground surface and height affect bifacial performance.
+If you have bifacial panels, switch to bifacial mode. The angle calculation adjusts slightly for rear-side capture. Read the [bifacial guide](/sunseeker/blog/bifacial-solar-panel-guide) for details on how ground surface and height affect bifacial performance.
 
 ## The bottom line
 
-For most people: set tilt equal to latitude, face the equator, and move on. If you have adjustable mounts and enjoy tinkering, seasonal adjustments add 8-9% annually. If you have bifacial panels, the [bifacial guide](/blog/bifacial-solar-panel-guide) covers the extra considerations.
+For most people: set tilt equal to latitude, face the equator, and move on. If you have adjustable mounts and enjoy tinkering, seasonal adjustments add 8-9% annually. If you have bifacial panels, the [bifacial guide](/sunseeker/blog/bifacial-solar-panel-guide) covers the extra considerations.
 
 The app makes the calculation easy. The hard part is usually physical: getting up there and adjusting the hardware.
 
-[Download SunSeeker](/sunseeker/download) | [Winter angle guide](/blog/winter-solar-panel-angle) | [Maintenance tips](/blog/solar-panel-maintenance-tips)
+[Get SunSeeker release updates](/sunseeker/download) | [Winter angle guide](/sunseeker/blog/winter-solar-panel-angle) | [Maintenance tips](/sunseeker/blog/solar-panel-maintenance-tips)

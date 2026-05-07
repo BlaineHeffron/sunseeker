@@ -118,4 +118,4 @@ Before you spend a dollar, do two things:
 
 The biggest gains in solar don't come from chasing the latest panel technology. They come from getting the basics right: good placement, correct angle, minimal shading, and clean panels. That's where most of the money is.
 
-[Download SunSeeker](/sunseeker/download) | [Read the panel angle guide](/blog/optimal-solar-panel-angle-guide) | [Maintenance tips](/blog/solar-panel-maintenance-tips)
+[Get SunSeeker release updates](/sunseeker/download) | [Read the panel angle guide](/sunseeker/blog/optimal-solar-panel-angle-guide) | [Maintenance tips](/sunseeker/blog/solar-panel-maintenance-tips)

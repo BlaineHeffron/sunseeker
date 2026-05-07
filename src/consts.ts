@@ -14,8 +14,8 @@ export const BRAND_COLORS = {
     lightGold: '#FFECB3',
   },
   secondary: {
-    grassGreen: '#7CB342',
-    freshGreen: '#9CCC65',
+    grassGreen: '#2E7D32',
+    freshGreen: '#81C784',
     softSage: '#C5E1A5',
     earthBrown: '#8D6E63',
   },

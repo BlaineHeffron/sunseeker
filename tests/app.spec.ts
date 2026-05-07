@@ -19,13 +19,11 @@ test.describe('Landing Page Tests', () => {
 
     // Check hero section
     await expect(page.locator('.hero')).toBeVisible();
-    await expect(page.locator('.hero h1')).toContainText('Find the Perfect Angle');
+    await expect(page.locator('.hero h1')).toContainText('Figure out the right angle');
 
     // Check CTA buttons
-    const appStoreButton = page.locator('a:has-text("App Store")').first();
-    const playStoreButton = page.locator('a:has-text("Google Play")').first();
-    await expect(appStoreButton).toBeVisible();
-    await expect(playStoreButton).toBeVisible();
+    await expect(page.locator('a:has-text("Get release updates")').first()).toBeVisible();
+    await expect(page.locator('a:has-text("Android release updates")').first()).toBeVisible();
 
     await takeScreenshot(page, '01-landing-hero');
   });
@@ -42,12 +40,12 @@ test.describe('Landing Page Tests', () => {
     await expect(featureCards).toHaveCount(6);
 
     // Check feature titles
-    await expect(page.locator('.feature-card:has-text("Real-Time Sun Tracking")')).toBeVisible();
-    await expect(page.locator('.feature-card:has-text("Location-Based")')).toBeVisible();
-    await expect(page.locator('.feature-card:has-text("Seasonal Adjustments")')).toBeVisible();
-    await expect(page.locator('.feature-card:has-text("Energy Estimates")')).toBeVisible();
-    await expect(page.locator('.feature-card:has-text("Smart Reminders")')).toBeVisible();
-    await expect(page.locator('.feature-card:has-text("Eco Impact")')).toBeVisible();
+    await expect(page.locator('.feature-card:has-text("Angle Calculator")')).toBeVisible();
+    await expect(page.locator('.feature-card:has-text("Uses Your Location")')).toBeVisible();
+    await expect(page.locator('.feature-card:has-text("Seasonal Reminders")')).toBeVisible();
+    await expect(page.locator('.feature-card:has-text("Bifacial Panel Mode")')).toBeVisible();
+    await expect(page.locator('.feature-card:has-text("Camera Positioning")')).toBeVisible();
+    await expect(page.locator('.feature-card:has-text("Tracking Advice")')).toBeVisible();
 
     await takeScreenshot(page, '02-landing-features');
   });
@@ -105,7 +103,7 @@ test.describe('Landing Page Tests', () => {
     await ctaSection.scrollIntoViewIfNeeded();
 
     await expect(ctaSection).toBeVisible();
-    await expect(page.locator('.cta h2:has-text("Start Maximizing")')).toBeVisible();
+    await expect(page.locator('.cta h2:has-text("Get your panel angle right")')).toBeVisible();
 
     await takeScreenshot(page, '06-landing-cta');
   });
@@ -185,8 +183,8 @@ test.describe('Blog Page Tests', () => {
     const blogCards = page.locator('.blog-card');
     await expect(blogCards.first()).toBeVisible();
 
-    // Should have 3 blog posts
-    await expect(blogCards).toHaveCount(3);
+    // Should have 5 blog posts
+    await expect(blogCards).toHaveCount(5);
 
     await takeScreenshot(page, '13-blog-cards');
   });
@@ -220,7 +218,7 @@ test.describe('Individual Blog Post Tests', () => {
     await page.goto(`${BASE}/blog/understanding-solar-energy-basics/`);
 
     await expect(page.locator('article')).toBeVisible();
-    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.locator('article h1')).toBeVisible();
 
     await takeScreenshot(page, '16-blog-solar-basics');
   });
@@ -229,7 +227,7 @@ test.describe('Individual Blog Post Tests', () => {
     await page.goto(`${BASE}/blog/optimal-solar-panel-angle-guide/`);
 
     await expect(page.locator('article')).toBeVisible();
-    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.locator('article h1')).toBeVisible();
 
     await takeScreenshot(page, '17-blog-angle-guide');
   });
@@ -238,7 +236,7 @@ test.describe('Individual Blog Post Tests', () => {
     await page.goto(`${BASE}/blog/solar-panel-maintenance-tips/`);
 
     await expect(page.locator('article')).toBeVisible();
-    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.locator('article h1')).toBeVisible();
 
     await takeScreenshot(page, '18-blog-maintenance-tips');
   });
@@ -361,10 +359,10 @@ test.describe('Link Tests', () => {
     await page.goto(`${BASE}/`);
 
     // Check app store buttons have href
-    const appStoreButton = page.locator('.hero-buttons a:has-text("App Store")');
+    const appStoreButton = page.locator('.hero-buttons a:has-text("Get release updates")');
     await expect(appStoreButton).toHaveAttribute('href', '/sunseeker/download#ios');
 
-    const playStoreButton = page.locator('.hero-buttons a:has-text("Google Play")');
+    const playStoreButton = page.locator('.hero-buttons a:has-text("Android release updates")');
     await expect(playStoreButton).toHaveAttribute('href', '/sunseeker/download#android');
 
     await takeScreenshot(page, '32-app-store-links');
@@ -380,7 +378,7 @@ test.describe('Link Tests', () => {
 
   test('should have working download page', async ({ page }) => {
     await page.goto(`${BASE}/download`);
-    await expect(page.locator('h1:has-text("Download SunSeeker")')).toBeVisible();
+    await expect(page.locator('h1:has-text("SunSeeker Release Updates")')).toBeVisible();
     await expect(page.locator('#ios')).toBeVisible();
     await expect(page.locator('#android')).toBeVisible();
   });

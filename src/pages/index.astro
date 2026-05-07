@@ -44,6 +44,28 @@ const competitors = [
   { feature: 'Seasonal adjustment reminders', sunseeker: true, others: false },
   { feature: 'Works offline', sunseeker: true, others: false },
 ];
+
+const calculatorExamples = [
+  { label: 'Latitude', value: '40° N' },
+  { label: 'Spring/Fall tilt', value: '40°' },
+  { label: 'Summer tilt', value: '25°' },
+  { label: 'Winter tilt', value: '55°' },
+];
+
+const faqs = [
+  {
+    question: 'What is the best solar panel angle?',
+    answer: 'A strong starting point is to set panel tilt close to your latitude, then adjust lower in summer and higher in winter if your mounts allow seasonal changes.',
+  },
+  {
+    question: 'Does SunSeeker replace a full site survey?',
+    answer: 'No. SunSeeker helps calculate solar panel tilt and position panels, but roof condition, electrical design, permitting, and shading still need professional review.',
+  },
+  {
+    question: 'Why do bifacial panels need different guidance?',
+    answer: 'Bifacial panels capture reflected light from the rear side, so ground surface, panel height, and mounting style affect the best setup.',
+  },
+];
 ---
 
 <!doctype html>
@@ -63,6 +85,41 @@ const competitors = [
       },
       "description": SITE_DESCRIPTION
     })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer,
+        },
+      })),
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to calculate solar panel angle with SunSeeker",
+      "description": "Use latitude, season, and panel type to estimate an appropriate solar panel tilt angle.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Enter your latitude",
+          "text": "Use your current location or enter your latitude manually.",
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Choose the season",
+          "text": "Select spring, summer, fall, or winter to account for the sun path.",
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Set the panel tilt",
+          "text": "Adjust the panel until its tilt matches the recommended angle.",
+        },
+      ],
+    })} />
   </head>
   <body>
     <Header />
@@ -81,13 +138,13 @@ const competitors = [
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
               </svg>
-              App Store
+              Get release updates
             </a>
             <a href={PLAY_STORE_URL} class="btn btn-secondary">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
               </svg>
-              Google Play
+              Android release updates
             </a>
           </div>
         </div>
@@ -99,6 +156,40 @@ const competitors = [
               <span></span><span></span><span></span>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Calculator Preview Section -->
+      <section class="calculator-preview section" aria-labelledby="calculator-heading">
+        <div class="calculator-copy">
+          <p class="eyebrow">Solar panel angle calculator</p>
+          <h2 id="calculator-heading">Estimate tilt from latitude and season</h2>
+          <p>
+            SunSeeker starts with the proven latitude rule, then adjusts for the season and panel type.
+            The app turns that number into a camera-guided target angle when you are standing at the array.
+          </p>
+          <a href="/sunseeker/blog/optimal-solar-panel-angle-guide" class="text-link">Read the angle guide</a>
+        </div>
+        <div class="calculator-panel" aria-label="Example solar panel angle calculation">
+          <div class="calc-header">
+            <span>Example setup</span>
+            <strong>Seasonal tilt</strong>
+          </div>
+          <div class="tilt-visual">
+            <div class="tilt-sun"></div>
+            <div class="tilt-arc"></div>
+            <div class="tilt-base"></div>
+            <div class="tilt-panel"></div>
+            <span class="tilt-label">40°</span>
+          </div>
+          <dl class="calc-readout">
+            {calculatorExamples.map((item) => (
+              <div>
+                <dt>{item.label}</dt>
+                <dd>{item.value}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
@@ -194,10 +285,10 @@ const competitors = [
       <!-- CTA Section -->
       <section class="cta section">
         <h2>Get your panel angle right</h2>
-        <p>Download free. Takes 30 seconds to calculate your optimal tilt.</p>
+        <p>Follow release progress and get notified when mobile downloads are ready.</p>
         <div class="cta-buttons">
-          <a href={APP_STORE_URL} class="btn btn-primary">Download for iOS</a>
-          <a href={PLAY_STORE_URL} class="btn btn-primary">Download for Android</a>
+          <a href={APP_STORE_URL} class="btn btn-primary">Get iOS release updates</a>
+          <a href={PLAY_STORE_URL} class="btn btn-primary">Get Android release updates</a>
         </div>
       </section>
 
@@ -206,6 +297,19 @@ const competitors = [
         <h2>Solar Energy Tips & Guides</h2>
         <p class="section-subtitle">Learn how to get the most from your solar panels.</p>
         <a href="/sunseeker/blog" class="btn btn-secondary">Read Our Blog</a>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq section" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Solar panel angle calculator FAQ</h2>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <article>
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </article>
+          ))}
+        </div>
       </section>
     </main>
     <Footer />
@@ -244,6 +348,22 @@ const competitors = [
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+  }
+
+  .eyebrow {
+    color: var(--grass-green);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .text-link {
+    color: var(--grass-green);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
   }
 
   /* Sun Animation */
@@ -330,6 +450,142 @@ const competitors = [
   @keyframes rayPulse {
     0%, 100% { opacity: 0.4; }
     50% { opacity: 0.8; }
+  }
+
+  /* Calculator Preview */
+  .calculator-preview {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 460px);
+    gap: 2.5rem;
+    align-items: center;
+    border-top: 1px solid var(--warm-gray);
+    border-bottom: 1px solid var(--warm-gray);
+  }
+
+  .calculator-copy p:not(.eyebrow) {
+    color: var(--text-muted);
+    max-width: 620px;
+  }
+
+  .calculator-panel {
+    background: var(--pure-white);
+    border: 1px solid var(--warm-gray);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+  }
+
+  .calc-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .calc-header strong {
+    color: var(--text-dark);
+  }
+
+  .tilt-visual {
+    position: relative;
+    height: 180px;
+    background: linear-gradient(180deg, var(--light-sky), var(--soft-cream));
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .tilt-sun {
+    position: absolute;
+    top: 20px;
+    right: 34px;
+    width: 54px;
+    height: 54px;
+    background: var(--sunshine-yellow);
+    border-radius: 50%;
+    box-shadow: 0 0 36px rgba(249, 168, 37, 0.45);
+  }
+
+  .tilt-base {
+    position: absolute;
+    left: 36px;
+    right: 36px;
+    bottom: 40px;
+    height: 4px;
+    background: var(--earth-brown);
+  }
+
+  .tilt-panel {
+    position: absolute;
+    left: 118px;
+    bottom: 48px;
+    width: 160px;
+    height: 46px;
+    background: linear-gradient(135deg, #173b67, #2c5a88);
+    border: 2px solid #102c4c;
+    border-radius: 4px;
+    transform: rotate(-40deg);
+    transform-origin: 20px 42px;
+  }
+
+  .tilt-panel::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 20px,
+      rgba(255, 255, 255, 0.18) 20px,
+      rgba(255, 255, 255, 0.18) 22px
+    );
+  }
+
+  .tilt-arc {
+    position: absolute;
+    left: 80px;
+    bottom: 42px;
+    width: 78px;
+    height: 78px;
+    border: 2px solid var(--grass-green);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+  }
+
+  .tilt-label {
+    position: absolute;
+    left: 148px;
+    bottom: 88px;
+    color: var(--grass-green);
+    font-weight: 700;
+  }
+
+  .calc-readout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1rem 0 0;
+  }
+
+  .calc-readout div {
+    background: var(--soft-cream);
+    border: 1px solid var(--warm-gray);
+    border-radius: 8px;
+    padding: 0.85rem;
+  }
+
+  .calc-readout dt {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .calc-readout dd {
+    color: var(--text-dark);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0.15rem 0 0;
   }
 
   /* Features Section */
@@ -436,6 +692,32 @@ const competitors = [
   /* Blog Preview */
   .blog-preview {
     text-align: center;
+  }
+
+  /* FAQ */
+  .faq {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .faq-list article {
+    border-bottom: 1px solid var(--warm-gray);
+    padding-bottom: 1.25rem;
+  }
+
+  .faq-list h3 {
+    font-size: 1.2rem;
+  }
+
+  .faq-list p {
+    color: var(--text-muted);
+    margin: 0;
   }
 
   /* Bifacial Section */
@@ -566,6 +848,10 @@ const competitors = [
 
     .hero-visual {
       order: -1;
+    }
+
+    .calculator-preview {
+      grid-template-columns: 1fr;
     }
 
     .sun-animation {

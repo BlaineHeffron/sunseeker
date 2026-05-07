@@ -96,4 +96,4 @@ The app has a dedicated bifacial mode. When you enable it:
 
 No other solar calculator does this. Most tools assume single-sided panels. If you're installing bifacial panels without accounting for albedo and height, you're guessing at a variable that determines whether your extra investment pays off or not.
 
-[Download SunSeeker](/sunseeker/download) | [Find your panel angle](/blog/optimal-solar-panel-angle-guide) | [Solar energy basics](/blog/understanding-solar-energy-basics)
+[Get SunSeeker release updates](/sunseeker/download) | [Find your panel angle](/sunseeker/blog/optimal-solar-panel-angle-guide) | [Solar energy basics](/sunseeker/blog/understanding-solar-energy-basics)

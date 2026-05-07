@@ -26,6 +26,8 @@ const {
   author = 'SunSeeker Team'
 } = Astro.props;
 
+const siteRoot = new URL('/sunseeker/', Astro.site);
+
 // Handle both ImageMetadata and string types for image
 const imageUrl = image
   ? typeof image === 'string'
@@ -69,7 +71,7 @@ const imageUrl = image
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={type} />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={imageUrl} />
@@ -82,7 +84,7 @@ const imageUrl = image
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:url" content={Astro.url} />
+<meta name="twitter:url" content={canonicalURL} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={imageUrl} />
@@ -99,7 +101,7 @@ const imageUrl = image
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "SunSeeker",
-  "url": Astro.site,
+  "url": siteRoot,
   "logo": new URL('/sunseeker/logo.png', Astro.site),
   "description": "Solar panel positioning app for maximizing energy output",
   "sameAs": [
@@ -107,19 +109,11 @@ const imageUrl = image
   ]
 })} />
 
-<!-- Structured Data - WebSite with SearchAction -->
+<!-- Structured Data - WebSite -->
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "SunSeeker",
-  "url": Astro.site,
-  "description": description,
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": `${Astro.site}sunseeker/blog?q={search_term_string}`
-    },
-    "query-input": "required name=search_term_string"
-  }
+  "url": siteRoot,
+  "description": description
 })} />

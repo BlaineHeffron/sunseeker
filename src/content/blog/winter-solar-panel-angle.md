@@ -96,4 +96,4 @@ Solar panels work in winter. They produce less, but they still contribute real p
 
 If you have an easy setup, adjust seasonally. If you don't, set your tilt to your latitude and move on. The panels will keep working either way.
 
-[Download SunSeeker](/sunseeker/download) | [Find your optimal angle](/blog/optimal-solar-panel-angle-guide) | [Solar energy basics](/blog/understanding-solar-energy-basics)
+[Get SunSeeker release updates](/sunseeker/download) | [Find your optimal angle](/sunseeker/blog/optimal-solar-panel-angle-guide) | [Solar energy basics](/sunseeker/blog/understanding-solar-energy-basics)

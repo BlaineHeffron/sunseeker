@@ -131,4 +131,4 @@ Total DIY time per year: maybe 3 hours. That's it.
 
 The panels themselves are the most reliable part of your solar system. NREL data shows modern mono panels degrade at about 0.4% per year. After 25 years, they're still producing nearly 90% of their original output. The rest of the system, inverters, wiring, mounting hardware, needs more attention. Focus your maintenance time there.
 
-[Download SunSeeker](/sunseeker/download) | [Solar energy basics](/blog/understanding-solar-energy-basics) | [Find your panel angle](/blog/optimal-solar-panel-angle-guide)
+[Get SunSeeker release updates](/sunseeker/download) | [Solar energy basics](/sunseeker/blog/understanding-solar-energy-basics) | [Find your panel angle](/sunseeker/blog/optimal-solar-panel-angle-guide)
