@@ -2,7 +2,14 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import { Image } from 'astro:assets';
 import { SITE_DESCRIPTION, SITE_TITLE, APP_STORE_URL, PLAY_STORE_URL } from '../consts';
+import bifacialReflectionImage from '../assets/infographics/bifacial-solar-panel-reflection-meter.jpg';
+import gpsCompassImage from '../assets/infographics/gps-compass-solar-panel-angle-calculator.jpg';
+import heroImage from '../assets/infographics/solaraim-app-store-hero-background.jpg';
+import northernAlignmentImage from '../assets/infographics/solar-panel-northern-hemisphere-alignment-gauge.jpg';
+import savedReadingsImage from '../assets/infographics/solar-panel-saved-readings-progress.jpg';
+import southernAlignmentImage from '../assets/infographics/solar-panel-southern-hemisphere-alignment-gauge.jpg';
 
 const features = [
   {
@@ -149,13 +156,16 @@ const faqs = [
           </div>
         </div>
         <div class="hero-visual">
-          <div class="sun-animation">
-            <div class="sun"></div>
-            <div class="panel"></div>
-            <div class="rays">
-              <span></span><span></span><span></span>
-            </div>
-          </div>
+          <Image
+            src={heroImage}
+            alt="SolarAim app hero image showing solar panels with alignment guidance under sunlight"
+            width={720}
+            height={1289}
+            format="webp"
+            quality={82}
+            loading="eager"
+            class="hero-image"
+          />
         </div>
       </section>
 
@@ -170,18 +180,17 @@ const faqs = [
           </p>
           <a href="/sunseeker/blog/optimal-solar-panel-angle-guide" class="text-link">Read the angle guide</a>
         </div>
-        <div class="calculator-panel" aria-label="Example solar panel angle calculation">
-          <div class="calc-header">
-            <span>Example setup</span>
-            <strong>Seasonal tilt</strong>
-          </div>
-          <div class="tilt-visual">
-            <div class="tilt-sun"></div>
-            <div class="tilt-arc"></div>
-            <div class="tilt-base"></div>
-            <div class="tilt-panel"></div>
-            <span class="tilt-label">40°</span>
-          </div>
+        <div class="calculator-panel" aria-label="GPS and compass solar panel angle calculation">
+          <Image
+            src={gpsCompassImage}
+            alt="GPS and phone compass inputs calculate solar panel tilt angle and direction to turn toward target"
+            width={800}
+            height={447}
+            format="webp"
+            quality={82}
+            loading="lazy"
+            class="calculator-image"
+          />
           <dl class="calc-readout">
             {calculatorExamples.map((item) => (
               <div>
@@ -190,6 +199,52 @@ const faqs = [
               </div>
             ))}
           </dl>
+        </div>
+      </section>
+
+      <!-- Visual Guides Section -->
+      <section class="visual-guides section section-alt" aria-labelledby="visual-guides-heading">
+        <h2 id="visual-guides-heading">Visual solar panel alignment guides</h2>
+        <p class="section-subtitle">
+          Use the app to match tilt and direction targets for your hemisphere, then save readings as you improve alignment.
+        </p>
+        <div class="visual-guide-grid">
+          <article class="visual-guide-card">
+            <Image
+              src={northernAlignmentImage}
+              alt="Northern Hemisphere solar panel alignment gauge showing current tilt below the optimal south-facing target"
+              width={640}
+              height={357}
+              format="webp"
+              quality={78}
+              loading="lazy"
+            />
+            <h3>Northern Hemisphere alignment</h3>
+          </article>
+          <article class="visual-guide-card">
+            <Image
+              src={southernAlignmentImage}
+              alt="Southern Hemisphere solar panel alignment gauge showing current tilt below the optimal north-facing target"
+              width={640}
+              height={357}
+              format="webp"
+              quality={78}
+              loading="lazy"
+            />
+            <h3>Southern Hemisphere alignment</h3>
+          </article>
+          <article class="visual-guide-card">
+            <Image
+              src={savedReadingsImage}
+              alt="Solar panel saved readings graphic showing alignment improving from needs adjustment to aligned"
+              width={640}
+              height={357}
+              format="webp"
+              quality={78}
+              loading="lazy"
+            />
+            <h3>Saved readings progress</h3>
+          </article>
         </div>
       </section>
 
@@ -237,6 +292,17 @@ const faqs = [
       <!-- Bifacial Panel Section -->
       <section class="bifacial section" id="bifacial">
         <div class="bifacial-content">
+          <div class="bifacial-visual">
+            <Image
+              src={bifacialReflectionImage}
+              alt="Bifacial solar panel diagram showing direct sunlight and reflected light from different ground surfaces"
+              width={800}
+              height={447}
+              format="webp"
+              quality={82}
+              loading="lazy"
+            />
+          </div>
           <div class="bifacial-text">
             <h2>Bifacial panels are different</h2>
             <p>
@@ -374,90 +440,18 @@ const faqs = [
     overflow: hidden;
   }
 
-  .sun-animation {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-  }
-
-  .sun {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(135deg, var(--sunshine-yellow), var(--soft-gold));
-    border-radius: 50%;
-    box-shadow: 0 0 60px rgba(249, 168, 37, 0.5);
-    animation: pulse 3s ease-in-out infinite;
-  }
-
-  .panel {
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%) perspective(200px) rotateX(30deg);
-    width: 120px;
-    height: 80px;
-    background: linear-gradient(135deg, #1a237e, #3949ab);
-    border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  }
-
-  .panel::before {
-    content: '';
-    position: absolute;
-    inset: 4px;
-    background: repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 18px,
-      rgba(255, 255, 255, 0.1) 18px,
-      rgba(255, 255, 255, 0.1) 20px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 14px,
-      rgba(255, 255, 255, 0.1) 14px,
-      rgba(255, 255, 255, 0.1) 16px
-    );
-  }
-
-  .rays span {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    width: 3px;
-    height: 60px;
-    background: linear-gradient(to bottom, var(--soft-gold), transparent);
-    transform-origin: top center;
-    opacity: 0.6;
-    animation: rayPulse 2s ease-in-out infinite;
-  }
-
-  .rays span:nth-child(1) { transform: translateX(-50%) rotate(-20deg); animation-delay: 0s; }
-  .rays span:nth-child(2) { transform: translateX(-50%) rotate(0deg); animation-delay: 0.3s; }
-  .rays span:nth-child(3) { transform: translateX(-50%) rotate(20deg); animation-delay: 0.6s; }
-
-  @keyframes pulse {
-    0%, 100% { transform: translateX(-50%) scale(1); }
-    50% { transform: translateX(-50%) scale(1.05); }
-  }
-
-  @keyframes rayPulse {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.8; }
+  .hero-image {
+    width: min(100%, 420px);
+    height: auto;
+    max-height: 540px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border: 1px solid var(--warm-gray);
+    box-shadow: var(--box-shadow);
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .sun,
-    .rays span {
-      animation: none;
-    }
-
     :global(.btn:hover),
     :global(.card:hover) {
       transform: none;
@@ -487,91 +481,11 @@ const faqs = [
     padding: 1.5rem;
   }
 
-  .calc-header {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .calc-header strong {
-    color: var(--text-dark);
-  }
-
-  .tilt-visual {
-    position: relative;
-    height: 180px;
-    background: linear-gradient(180deg, var(--light-sky), var(--soft-cream));
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  .tilt-sun {
-    position: absolute;
-    top: 20px;
-    right: 34px;
-    width: 54px;
-    height: 54px;
-    background: var(--sunshine-yellow);
-    border-radius: 50%;
-    box-shadow: 0 0 36px rgba(249, 168, 37, 0.45);
-  }
-
-  .tilt-base {
-    position: absolute;
-    left: 36px;
-    right: 36px;
-    bottom: 40px;
-    height: 4px;
-    background: var(--earth-brown);
-  }
-
-  .tilt-panel {
-    position: absolute;
-    left: 118px;
-    bottom: 48px;
-    width: 160px;
-    height: 46px;
-    background: linear-gradient(135deg, #173b67, #2c5a88);
-    border: 2px solid #102c4c;
-    border-radius: 4px;
-    transform: rotate(-40deg);
-    transform-origin: 20px 42px;
-  }
-
-  .tilt-panel::after {
-    content: '';
-    position: absolute;
-    inset: 6px;
-    background: repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 20px,
-      rgba(255, 255, 255, 0.18) 20px,
-      rgba(255, 255, 255, 0.18) 22px
-    );
-  }
-
-  .tilt-arc {
-    position: absolute;
-    left: 80px;
-    bottom: 42px;
-    width: 78px;
-    height: 78px;
-    border: 2px solid var(--grass-green);
-    border-left-color: transparent;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-  }
-
-  .tilt-label {
-    position: absolute;
-    left: 148px;
-    bottom: 88px;
-    color: var(--grass-green);
-    font-weight: 700;
+  .calculator-image {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--warm-gray);
+    margin-bottom: 1rem;
   }
 
   .calc-readout {
@@ -603,6 +517,38 @@ const faqs = [
   /* Features Section */
   .features {
     text-align: center;
+  }
+
+  .visual-guides {
+    text-align: center;
+  }
+
+  .visual-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .visual-guide-card {
+    background: var(--pure-white);
+    border: 1px solid var(--warm-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    text-align: left;
+  }
+
+  .visual-guide-card img {
+    display: block;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .visual-guide-card h3 {
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 0;
   }
 
   .section-subtitle {
@@ -741,8 +687,18 @@ const faqs = [
   }
 
   .bifacial-content {
-    max-width: 800px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: center;
+    max-width: 1040px;
     margin: 0 auto;
+  }
+
+  .bifacial-visual img {
+    display: block;
+    border: 1px solid rgba(33, 33, 33, 0.08);
+    box-shadow: var(--box-shadow);
   }
 
   .badge {
@@ -866,23 +822,20 @@ const faqs = [
       grid-template-columns: 1fr;
     }
 
-    .sun-animation {
-      width: 200px;
-      height: 200px;
+    .visual-guide-grid {
+      grid-template-columns: 1fr;
     }
 
-    .sun {
-      width: 70px;
-      height: 70px;
-    }
-
-    .panel {
-      width: 90px;
-      height: 60px;
+    .hero-image {
+      max-height: 360px;
     }
 
     .cta {
       padding: 3rem 1.5rem;
+    }
+
+    .bifacial-content {
+      grid-template-columns: 1fr;
     }
   }
 </style>

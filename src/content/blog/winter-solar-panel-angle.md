@@ -3,8 +3,8 @@ title: 'Do solar panels work in winter? Yes, and here''s how to help'
 description: 'Solar panels produce less in winter but still work well. Learn how snow, cold, and panel angle affect output, and when seasonal tilt adjustments are worth it.'
 pubDate: 'Feb 27 2026'
 updatedDate: 'Feb 27 2026'
-heroImage: '../../assets/winter-solar-panel-tilt-angle.jpg'
-heroAlt: 'Solar panels with steep winter tilt angle for low sun'
+heroImage: '../../assets/infographics/seasonal-solar-panel-tilt-ladder.jpg'
+heroAlt: 'Seasonal solar panel tilt ladder showing winter, spring, summer, and fall panel angles'
 ---
 
 Every December I get the same question from people who just installed solar: "My production dropped 40%. Is something broken?"

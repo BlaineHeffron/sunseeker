@@ -84,7 +84,7 @@ test.describe('Landing Page Tests', () => {
     await page.goto(`${BASE}/`);
 
     // Check header navigation
-    const header = page.locator('header');
+    const header = page.getByRole('banner');
     await expect(header).toBeVisible();
 
     // Check nav links in .nav-links

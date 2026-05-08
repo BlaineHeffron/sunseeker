@@ -3,8 +3,8 @@ title: 'How do solar panels work? A plain-language guide'
 description: 'Solar panels turn sunlight into electricity through the photovoltaic effect. Learn how solar cells, inverters, and panel types work together to power your home.'
 pubDate: 'Jan 05 2026'
 updatedDate: 'Feb 27 2026'
-heroImage: '../../assets/solar-energy-photovoltaic-basics.jpg'
-heroAlt: 'Photovoltaic solar cells converting sunlight to electricity'
+heroImage: '../../assets/infographics/solar-panel-sun-path-compass.jpg'
+heroAlt: 'Top-down solar panel sun path compass showing morning, noon, and evening sun direction'
 ---
 
 Last summer, a friend called me from his roof. He'd just installed a 6 kW solar system and wanted to know why his panels were producing less power at 2 PM on a 95-degree day than they had at 10 AM when it was cooler. "I thought more sun meant more power," he said.

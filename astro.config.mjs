@@ -8,6 +8,9 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://blaineheffron.github.io',
   base: '/sunseeker',
+  devToolbar: {
+    enabled: false,
+  },
   integrations: [
     mdx(),
     sitemap({

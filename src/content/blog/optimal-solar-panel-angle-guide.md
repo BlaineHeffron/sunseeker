@@ -3,8 +3,8 @@ title: 'Best angle for solar panels: how to find your optimal tilt'
 description: 'Your solar panel angle affects production more than most factors. Use the latitude rule, seasonal adjustments, and azimuth to find the best tilt for your location.'
 pubDate: 'Jan 10 2026'
 updatedDate: 'Feb 27 2026'
-heroImage: '../../assets/solar-panel-angle-calculator-app.jpg'
-heroAlt: 'Solar panel angle calculator showing optimal tilt for rooftop installation'
+heroImage: '../../assets/infographics/gps-compass-solar-panel-angle-calculator.jpg'
+heroAlt: 'GPS and compass solar panel angle calculator showing tilt angle and direction target'
 ---
 
 Your solar panels produce the most power when sunlight hits them straight on. The angle between your panel and the ground, called the tilt, determines how close to "straight on" you can get throughout the day and across seasons.
