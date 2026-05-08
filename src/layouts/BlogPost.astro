@@ -14,7 +14,7 @@ const { title, description, pubDate, updatedDate, heroImage, heroAlt } = Astro.p
 <html lang="en">
   <head>
     <BaseHead
-      title={`${title} | ArrayPilot Blog`}
+      title={`${title} | SolarAim Blog`}
       description={description}
       type="article"
       publishedTime={pubDate.toISOString()}
@@ -29,11 +29,11 @@ const { title, description, pubDate, updatedDate, heroImage, heroAlt } = Astro.p
       "dateModified": updatedDate?.toISOString() || pubDate.toISOString(),
       "author": {
         "@type": "Organization",
-        "name": "ArrayPilot Team"
+        "name": "SolarAim Team"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "ArrayPilot",
+        "name": "SolarAim",
         "logo": {
           "@type": "ImageObject",
           "url": "https://blaineheffron.github.io/sunseeker/logo.png"

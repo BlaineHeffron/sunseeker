@@ -77,7 +77,7 @@ March or early April, when spring arrives, I flatten them back. Again, approxima
 
 Between adjustments, I'll clear heavy snow with a roof rake when it's convenient. Light dustings I ignore entirely.
 
-ArrayPilot sends optional reminders around each solstice and equinox if you want them. Useful if you're the type who forgets (I am). But if the reminders stress you out, turn them off. Set your panels to your latitude and leave them. The annual difference between "optimized seasonal adjustment" and "set it and forget it" is single-digit percentages.
+SolarAim sends optional reminders around each solstice and equinox if you want them. Useful if you're the type who forgets (I am). But if the reminders stress you out, turn them off. Set your panels to your latitude and leave them. The annual difference between "optimized seasonal adjustment" and "set it and forget it" is single-digit percentages.
 
 ## How much does winter really cost you?
 
@@ -96,4 +96,4 @@ Solar panels work in winter. They produce less, but they still contribute real p
 
 If you have an easy setup, adjust seasonally. If you don't, set your tilt to your latitude and move on. The panels will keep working either way.
 
-[Get ArrayPilot release updates](/sunseeker/download) | [Find your optimal angle](/sunseeker/blog/optimal-solar-panel-angle-guide) | [Solar energy basics](/sunseeker/blog/understanding-solar-energy-basics)
+[Get SolarAim release updates](/sunseeker/download) | [Find your optimal angle](/sunseeker/blog/optimal-solar-panel-angle-guide) | [Solar energy basics](/sunseeker/blog/understanding-solar-energy-basics)

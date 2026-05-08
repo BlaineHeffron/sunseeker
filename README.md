@@ -1,6 +1,6 @@
-# ArrayPilot Website
+# SolarAim Website
 
-Marketing site and blog for ArrayPilot, built with Astro and deployed to GitHub Pages.
+Marketing site and blog for SolarAim, built with Astro and deployed to GitHub Pages.
 
 ## Tech Stack
 

@@ -11,7 +11,7 @@ Bifacial solar panels have cells on both sides. The front works like any panel. 
 
 This sounds like free energy, and partly it is. Depending on the installation, the rear side can add 5-30% more energy, according to research published in Energies (MDPI, 2025). But most of the articles you'll read about bifacial panels focus on the technology and skip the part that actually determines whether you'll see those gains: what's under the panels and how high they sit.
 
-Most angle calculators and solar tools ignore bifacial entirely. That's what pushed us to build bifacial support into ArrayPilot. The math is different for dual-sided panels, and getting it wrong means paying a premium for cells you won't use.
+Most angle calculators and solar tools ignore bifacial entirely. That's what pushed us to build bifacial support into SolarAim. The math is different for dual-sided panels, and getting it wrong means paying a premium for cells you won't use.
 
 ## The ground surface makes or breaks your bifacial investment
 
@@ -53,7 +53,7 @@ What does change slightly:
 - The optimal angle depends more on what's behind and below than on the front-side geometry
 - If your ground surface has high albedo, the rear contribution is less sensitive to exact tilt
 
-The ArrayPilot app accounts for these differences in its bifacial mode. The adjustments are subtle but they compound over a year.
+The SolarAim app accounts for these differences in its bifacial mode. The adjustments are subtle but they compound over a year.
 
 ## When vertical mounting makes sense
 
@@ -85,7 +85,7 @@ Bifacial panels cost 5-15% more than comparable monofacial panels. The bifacial 
 
 A rough guide: if your installation can realistically capture 10% or more rear-side gain, bifacial pays for its premium within 3-5 years. If rear-side gain is under 5%, you're better off spending the premium on an extra monofacial panel instead.
 
-## What ArrayPilot does for bifacial installations
+## What SolarAim does for bifacial installations
 
 The app has a dedicated bifacial mode. When you enable it:
 
@@ -96,4 +96,4 @@ The app has a dedicated bifacial mode. When you enable it:
 
 No other solar calculator does this. Most tools assume single-sided panels. If you're installing bifacial panels without accounting for albedo and height, you're guessing at a variable that determines whether your extra investment pays off or not.
 
-[Get ArrayPilot release updates](/sunseeker/download) | [Find your panel angle](/sunseeker/blog/optimal-solar-panel-angle-guide) | [Solar energy basics](/sunseeker/blog/understanding-solar-energy-basics)
+[Get SolarAim release updates](/sunseeker/download) | [Find your panel angle](/sunseeker/blog/optimal-solar-panel-angle-guide) | [Solar energy basics](/sunseeker/blog/understanding-solar-energy-basics)

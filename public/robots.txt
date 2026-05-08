@@ -1,4 +1,4 @@
-# robots.txt for ArrayPilot
+# robots.txt for SolarAim
 # https://blaineheffron.github.io/sunseeker/
 
 User-agent: *

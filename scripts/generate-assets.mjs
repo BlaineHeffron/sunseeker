@@ -50,7 +50,7 @@ const ogSvg = `
     <circle r="72" fill="url(#sun)"/>
     <circle r="98" fill="none" stroke="#7CB342" stroke-width="10" stroke-dasharray="10 14"/>
   </g>
-  <text x="84" y="270" font-family="Arial, sans-serif" font-size="82" fill="#212121" font-weight="700">ArrayPilot</text>
+  <text x="84" y="270" font-family="Arial, sans-serif" font-size="82" fill="#212121" font-weight="700">SolarAim</text>
   <text x="84" y="344" font-family="Arial, sans-serif" font-size="38" fill="#757575">Optimize Your Solar Panel Positioning</text>
 </svg>`;
 

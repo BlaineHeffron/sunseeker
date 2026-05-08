@@ -1,6 +1,6 @@
 {
-  "name": "ArrayPilot - Solar Panel Positioning",
-  "short_name": "ArrayPilot",
+  "name": "SolarAim - Solar Panel Positioning",
+  "short_name": "SolarAim",
   "description": "Optimize your solar panel positioning for maximum energy output",
   "start_url": "/sunseeker/",
   "display": "standalone",
