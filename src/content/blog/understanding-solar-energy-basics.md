@@ -66,7 +66,7 @@ My friend's rooftop mystery had a simple answer: heat. But temperature is just o
 
 **Temperature** works against you on hot days. Panel efficiency drops roughly 0.3-0.5% for every degree Celsius above 25C (77F). On a 40C day, that's a 5-7% efficiency loss. This is why my friend's panels performed better in the cooler morning. Panels in cool, sunny climates (think Colorado mountains) often outperform panels in hot deserts per peak sun hour.
 
-**Panel angle** determines how directly sunlight hits the surface. Panels perpendicular to the sun's rays generate the most power. Since the sun's path changes with the seasons, the ideal angle changes too. A tilt equal to your latitude is a solid year-round starting point. SunSeeker calculates the exact angle for your location and current date.
+**Panel angle** determines how directly sunlight hits the surface. Panels perpendicular to the sun's rays generate the most power. Since the sun's path changes with the seasons, the ideal angle changes too. A tilt equal to your latitude is a solid year-round starting point. ArrayPilot calculates the exact angle for your location and current date.
 
 **Shading** is disproportionately damaging. A homeowner in Portland named Sarah spent weeks optimizing her panel angles only to realize a neighbor's oak tree was shading two panels every afternoon. Removing the shade problem gained her more production than all the angle tweaking combined. Even a small shadow across one cell can reduce a panel's output by 30-80%, depending on the wiring configuration. Before worrying about angles, make sure your panels have unobstructed sun from 9 AM to 3 PM.
 
@@ -114,8 +114,8 @@ Before you spend a dollar, do two things:
 
 1. **Check your site.** Walk outside at noon and look at your roof. Count the hours of unobstructed sun between 9 AM and 3 PM. If you have fewer than 4 hours of direct sun, solar may not make financial sense at your location. No amount of panel technology overcomes a bad site.
 
-2. **Find your angle.** SunSeeker uses your phone's GPS and sensors to calculate the optimal panel tilt for your exact location. Point the camera at your panels (or proposed panel location) and see in real time whether your angle is right. The app also sends seasonal adjustment reminders if you have an adjustable mounting system. It's free to download, and you can check your site before talking to any installer.
+2. **Find your angle.** ArrayPilot uses your phone's GPS and sensors to calculate the optimal panel tilt for your exact location. Point the camera at your panels (or proposed panel location) and see in real time whether your angle is right. The app also sends seasonal adjustment reminders if you have an adjustable mounting system. It's free to download, and you can check your site before talking to any installer.
 
 The biggest gains in solar don't come from chasing the latest panel technology. They come from getting the basics right: good placement, correct angle, minimal shading, and clean panels. That's where most of the money is.
 
-[Get SunSeeker release updates](/sunseeker/download) | [Read the panel angle guide](/sunseeker/blog/optimal-solar-panel-angle-guide) | [Maintenance tips](/sunseeker/blog/solar-panel-maintenance-tips)
+[Get ArrayPilot release updates](/sunseeker/download) | [Read the panel angle guide](/sunseeker/blog/optimal-solar-panel-angle-guide) | [Maintenance tips](/sunseeker/blog/solar-panel-maintenance-tips)

@@ -59,7 +59,7 @@ If you have a monitoring app (most modern inverters come with one), check it wee
 - Gradual decline beyond the expected 0.4% per year degradation
 - Inverter error codes (most common: ground fault, arc fault, or grid frequency errors)
 
-SunSeeker tracks expected versus actual production for your location. A sudden drop of more than 15% that isn't explained by weather means something needs attention.
+ArrayPilot tracks expected versus actual production for your location. A sudden drop of more than 15% that isn't explained by weather means something needs attention.
 
 ## Critter problems are real
 
@@ -131,4 +131,4 @@ Total DIY time per year: maybe 3 hours. That's it.
 
 The panels themselves are the most reliable part of your solar system. NREL data shows modern mono panels degrade at about 0.4% per year. After 25 years, they're still producing nearly 90% of their original output. The rest of the system, inverters, wiring, mounting hardware, needs more attention. Focus your maintenance time there.
 
-[Get SunSeeker release updates](/sunseeker/download) | [Solar energy basics](/sunseeker/blog/understanding-solar-energy-basics) | [Find your panel angle](/sunseeker/blog/optimal-solar-panel-angle-guide)
+[Get ArrayPilot release updates](/sunseeker/download) | [Solar energy basics](/sunseeker/blog/understanding-solar-energy-basics) | [Find your panel angle](/sunseeker/blog/optimal-solar-panel-angle-guide)

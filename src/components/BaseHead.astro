@@ -23,7 +23,7 @@ const {
   type = 'website',
   publishedTime,
   modifiedTime,
-  author = 'SunSeeker Team'
+  author = 'ArrayPilot Team'
 } = Astro.props;
 
 const siteRoot = new URL('/sunseeker/', Astro.site);
@@ -76,7 +76,7 @@ const imageUrl = image
 <meta property="og:description" content={description} />
 <meta property="og:image" content={imageUrl} />
 <meta property="og:image:alt" content={title} />
-<meta property="og:site_name" content="SunSeeker" />
+<meta property="og:site_name" content="ArrayPilot" />
 <meta property="og:locale" content="en_US" />
 {publishedTime && <meta property="article:published_time" content={publishedTime} />}
 {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
@@ -94,13 +94,13 @@ const imageUrl = image
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-<meta name="apple-mobile-web-app-title" content="SunSeeker" />
+<meta name="apple-mobile-web-app-title" content="ArrayPilot" />
 
 <!-- Structured Data - Organization -->
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "SunSeeker",
+  "name": "ArrayPilot",
   "url": siteRoot,
   "logo": new URL('/sunseeker/logo.png', Astro.site),
   "description": "Solar panel positioning app for maximizing energy output",
@@ -113,7 +113,7 @@ const imageUrl = image
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "SunSeeker",
+  "name": "ArrayPilot",
   "url": siteRoot,
   "description": description
 })} />

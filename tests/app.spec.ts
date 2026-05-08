@@ -58,7 +58,7 @@ test.describe('Landing Page Tests', () => {
     await howItWorks.scrollIntoViewIfNeeded();
 
     await expect(howItWorks).toBeVisible();
-    await expect(page.locator('h2:has-text("How SunSeeker Works")')).toBeVisible();
+    await expect(page.locator('h2:has-text("How ArrayPilot Works")')).toBeVisible();
 
     // Check 3 steps
     const steps = page.locator('.step');
@@ -114,7 +114,7 @@ test.describe('About Page Tests', () => {
     await page.goto(`${BASE}/about`);
 
     // Check main heading
-    await expect(page.locator('.about-hero h1:has-text("About SunSeeker")')).toBeVisible();
+    await expect(page.locator('.about-hero h1:has-text("About ArrayPilot")')).toBeVisible();
 
     await takeScreenshot(page, '07-about-hero');
   });
@@ -378,7 +378,7 @@ test.describe('Link Tests', () => {
 
   test('should have working download page', async ({ page }) => {
     await page.goto(`${BASE}/download`);
-    await expect(page.locator('h1:has-text("SunSeeker Release Updates")')).toBeVisible();
+    await expect(page.locator('h1:has-text("ArrayPilot Release Updates")')).toBeVisible();
     await expect(page.locator('#ios')).toBeVisible();
     await expect(page.locator('#android')).toBeVisible();
   });

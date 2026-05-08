@@ -62,7 +62,7 @@ A panel fixed at the winter angle still captures 81-88% of the energy compared t
 
 If your panels are on a steep roof and adjusting means a ladder and 30 minutes of careful work, the math is less appealing. At $0.15/kWh, the seasonal gain on a 6 kW system might be worth $50-80 per year. Worth it to some people, not to others.
 
-SunSeeker sends optional reminders around each equinox and solstice. If you want to adjust, the reminders help. If you don't, turn them off. You're not leaving huge amounts of energy on the table either way.
+ArrayPilot sends optional reminders around each equinox and solstice. If you want to adjust, the reminders help. If you don't, turn them off. You're not leaving huge amounts of energy on the table either way.
 
 ## Direction matters as much as tilt
 
@@ -109,7 +109,7 @@ Above 35 degrees latitude, tilted racking on a flat roof usually pays for itself
 
 **Ignoring the physical constraints.** Your roof has a pitch. It faces a direction. Unless you're building a custom racking system, your tilt and azimuth are largely dictated by your roof. The calculation tells you what's ideal; your roof tells you what's possible. Usually the gap between ideal and possible is small enough that solar still makes financial sense.
 
-## Where SunSeeker helps
+## Where ArrayPilot helps
 
 The app does the latitude calculation automatically using your phone's GPS. It also adjusts for the current date, so you get a seasonally appropriate angle recommendation rather than a static number.
 
@@ -123,4 +123,4 @@ For most people: set tilt equal to latitude, face the equator, and move on. If y
 
 The app makes the calculation easy. The hard part is usually physical: getting up there and adjusting the hardware.
 
-[Get SunSeeker release updates](/sunseeker/download) | [Winter angle guide](/sunseeker/blog/winter-solar-panel-angle) | [Maintenance tips](/sunseeker/blog/solar-panel-maintenance-tips)
+[Get ArrayPilot release updates](/sunseeker/download) | [Winter angle guide](/sunseeker/blog/winter-solar-panel-angle) | [Maintenance tips](/sunseeker/blog/solar-panel-maintenance-tips)
