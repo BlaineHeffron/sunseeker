@@ -1,64 +1,28 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
 const publicDir = new URL('../public/', import.meta.url);
+const publicDirPath = fileURLToPath(publicDir);
+const appIconSource = fileURLToPath(new URL('../src/assets/brand/solaraim-app-icon-master.jpg', import.meta.url));
+const socialSource = fileURLToPath(new URL('../src/assets/solaraim-social-share-image.jpg', import.meta.url));
 
-async function writePng(fileName, width, height, svg) {
-  const outputPath = path.join(publicDir.pathname, fileName);
-  await sharp(Buffer.from(svg))
+async function writePngFromImage(source, fileName, width, height) {
+  const outputPath = path.join(publicDirPath, fileName);
+  await sharp(source)
+    .rotate()
+    .resize(width, height, { fit: 'cover', position: 'center' })
     .png({ compressionLevel: 9, quality: 90 })
-    .resize(width, height)
     .toFile(outputPath);
 }
 
-function iconSvg(size) {
-  return `
-<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 512 512">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#7CB342"/>
-      <stop offset="100%" stop-color="#F9A825"/>
-    </linearGradient>
-    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFD54F"/>
-      <stop offset="100%" stop-color="#F9A825"/>
-    </radialGradient>
-  </defs>
-  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
-  <g transform="translate(256 256)">
-    <circle r="96" fill="url(#sun)"/>
-    <circle r="128" fill="none" stroke="#FFFDF7" stroke-width="18" stroke-dasharray="12 16"/>
-  </g>
-</svg>`;
-}
+await fs.mkdir(publicDirPath, { recursive: true });
+await writePngFromImage(appIconSource, 'icon-192.png', 192, 192);
+await writePngFromImage(appIconSource, 'icon-512.png', 512, 512);
+await writePngFromImage(appIconSource, 'apple-touch-icon.png', 180, 180);
+await writePngFromImage(appIconSource, 'logo.png', 512, 512);
+await writePngFromImage(appIconSource, 'solaraim-logo-64.png', 64, 64);
+await writePngFromImage(socialSource, 'og-image.png', 1200, 630);
 
-const ogSvg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#FFFDF7"/>
-      <stop offset="100%" stop-color="#C5E1A5"/>
-    </linearGradient>
-    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFD54F"/>
-      <stop offset="100%" stop-color="#F9A825"/>
-    </radialGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <g transform="translate(980 140)">
-    <circle r="72" fill="url(#sun)"/>
-    <circle r="98" fill="none" stroke="#7CB342" stroke-width="10" stroke-dasharray="10 14"/>
-  </g>
-  <text x="84" y="270" font-family="Arial, sans-serif" font-size="82" fill="#212121" font-weight="700">SolarAim</text>
-  <text x="84" y="344" font-family="Arial, sans-serif" font-size="38" fill="#757575">Optimize Your Solar Panel Positioning</text>
-</svg>`;
-
-await fs.mkdir(publicDir, { recursive: true });
-await writePng('icon-192.png', 192, 192, iconSvg(192));
-await writePng('icon-512.png', 512, 512, iconSvg(512));
-await writePng('apple-touch-icon.png', 180, 180, iconSvg(180));
-await writePng('logo.png', 512, 512, iconSvg(512));
-await writePng('og-image.png', 1200, 630, ogSvg);
-
-console.log('Generated icon-192.png, icon-512.png, apple-touch-icon.png, logo.png, og-image.png');
+console.log('Generated SolarAim public icons and social image from source assets.');

@@ -4,12 +4,15 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { Image } from 'astro:assets';
 import { SITE_DESCRIPTION, SITE_TITLE, APP_STORE_URL, PLAY_STORE_URL } from '../consts';
-import bifacialReflectionImage from '../assets/infographics/bifacial-solar-panel-reflection-meter.jpg';
+import bifacialReflectionImage from '../assets/bifacial-solar-panel-reflection-diagram.jpg';
+import bifacialReflectionMeterImage from '../assets/infographics/bifacial-solar-panel-reflection-meter.jpg';
 import gpsCompassImage from '../assets/infographics/gps-compass-solar-panel-angle-calculator.jpg';
-import heroImage from '../assets/infographics/solaraim-app-store-hero-background.jpg';
+import heroImage from '../assets/solaraim-solar-panel-positioning-app-hero.jpg';
 import northernAlignmentImage from '../assets/infographics/solar-panel-northern-hemisphere-alignment-gauge.jpg';
 import savedReadingsImage from '../assets/infographics/solar-panel-saved-readings-progress.jpg';
+import socialShareImage from '../assets/solaraim-social-share-image.jpg';
 import southernAlignmentImage from '../assets/infographics/solar-panel-southern-hemisphere-alignment-gauge.jpg';
+import sunPathCompassImage from '../assets/infographics/solar-panel-sun-path-compass.jpg';
 
 const features = [
   {
@@ -78,7 +81,12 @@ const faqs = [
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead
+      title={SITE_TITLE}
+      description={SITE_DESCRIPTION}
+      image={socialShareImage}
+      imageAlt="SolarAim solar panel positioning app preview with phone-based alignment guidance"
+    />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
@@ -158,12 +166,15 @@ const faqs = [
         <div class="hero-visual">
           <Image
             src={heroImage}
-            alt="SolarAim app hero image showing solar panels with alignment guidance under sunlight"
-            width={720}
-            height={1289}
+            alt="SolarAim app preview showing a phone lying flat on a solar panel with tilt and compass alignment guidance"
+            width={900}
+            height={502}
             format="webp"
             quality={82}
             loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            sizes="(max-width: 768px) 100vw, 50vw"
             class="hero-image"
           />
         </div>
@@ -245,6 +256,30 @@ const faqs = [
             />
             <h3>Saved readings progress</h3>
           </article>
+          <article class="visual-guide-card">
+            <Image
+              src={sunPathCompassImage}
+              alt="Solar panel sun path compass showing morning, noon, and evening sun directions around a panel"
+              width={640}
+              height={357}
+              format="webp"
+              quality={78}
+              loading="lazy"
+            />
+            <h3>Sun path compass</h3>
+          </article>
+          <article class="visual-guide-card">
+            <Image
+              src={bifacialReflectionMeterImage}
+              alt="Bifacial solar panel reflection meter comparing dark ground, grass, gravel, and snow reflectivity"
+              width={640}
+              height={357}
+              format="webp"
+              quality={78}
+              loading="lazy"
+            />
+            <h3>Bifacial reflection meter</h3>
+          </article>
         </div>
       </section>
 
@@ -294,11 +329,11 @@ const faqs = [
         <div class="bifacial-content">
           <div class="bifacial-visual">
             <Image
-              src={bifacialReflectionImage}
-              alt="Bifacial solar panel diagram showing direct sunlight and reflected light from different ground surfaces"
-              width={800}
-              height={447}
-              format="webp"
+            src={bifacialReflectionImage}
+            alt="Bifacial solar panel diagram showing direct sunlight and reflected light reaching the rear side of an elevated panel"
+            width={800}
+            height={447}
+            format="webp"
               quality={82}
               loading="lazy"
             />
@@ -441,12 +476,11 @@ const faqs = [
   }
 
   .hero-image {
-    width: min(100%, 420px);
+    width: min(100%, 560px);
     height: auto;
-    max-height: 540px;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
-    object-position: center top;
+    object-position: center;
     border: 1px solid var(--warm-gray);
     box-shadow: var(--box-shadow);
   }

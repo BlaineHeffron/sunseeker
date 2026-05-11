@@ -2,6 +2,8 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import { Image } from 'astro:assets';
+import missionImage from '../assets/solaraim-mission-solar-panel-alignment.jpg';
 
 const title = 'About SolarAim - Our Mission to Maximize Solar Energy';
 const description = 'Learn about SolarAim, the free app helping solar panel owners optimize their energy production through intelligent positioning and real-time sun tracking.';
@@ -10,7 +12,12 @@ const description = 'Learn about SolarAim, the free app helping solar panel owne
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead
+      title={title}
+      description={description}
+      image={missionImage}
+      imageAlt="SolarAim mission illustration showing phone-based solar panel alignment"
+    />
   </head>
   <body>
     <Header />
@@ -20,6 +27,19 @@ const description = 'Learn about SolarAim, the free app helping solar panel owne
         <p class="lead">
           We believe everyone with solar panels deserves to get the most from their investment.
         </p>
+        <Image
+          src={missionImage}
+          alt="SolarAim mission illustration showing a phone lying flat on a solar panel for sensor-guided alignment"
+          width={900}
+          height={502}
+          format="webp"
+          quality={82}
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          sizes="(max-width: 768px) 100vw, 800px"
+          class="mission-image"
+        />
       </section>
 
       <section class="about-content">
@@ -129,6 +149,14 @@ const description = 'Learn about SolarAim, the free app helping solar panel owne
     color: var(--text-muted);
     max-width: 600px;
     margin: 0 auto;
+  }
+
+  .mission-image {
+    display: block;
+    width: min(100%, 760px);
+    margin: 2rem auto 0;
+    border: 1px solid var(--warm-gray);
+    box-shadow: var(--box-shadow);
   }
 
   .about-content {

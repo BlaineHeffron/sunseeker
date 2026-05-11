@@ -8,7 +8,7 @@ const currentYear = new Date().getFullYear();
   <div class="footer-content">
     <div class="footer-brand">
       <a href="/sunseeker/" class="footer-logo">
-        <span>☀️</span> SolarAim
+        <img src="/sunseeker/solaraim-logo-64.png" alt="" width="32" height="32" loading="lazy" decoding="async" /> SolarAim
       </a>
       <p>Maximize your solar energy output with intelligent panel positioning.</p>
     </div>
@@ -79,6 +79,12 @@ const currentYear = new Date().getFullYear();
     color: var(--pure-white);
     text-decoration: none;
     margin-bottom: 1rem;
+  }
+
+  .footer-logo img {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
   }
 
   .footer-logo:hover {

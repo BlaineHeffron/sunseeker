@@ -28,3 +28,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Agent/editor artifacts
+.agent_bus/
+*.swp

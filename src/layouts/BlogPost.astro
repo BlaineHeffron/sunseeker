@@ -9,6 +9,10 @@ import Header from '../components/Header.astro';
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage, heroAlt } = Astro.props;
+const heroDisplayWidth = 800;
+const heroDisplayHeight = heroImage
+  ? Math.round((heroDisplayWidth * heroImage.height) / heroImage.width)
+  : undefined;
 ---
 
 <html lang="en">
@@ -16,6 +20,8 @@ const { title, description, pubDate, updatedDate, heroImage, heroAlt } = Astro.p
     <BaseHead
       title={`${title} | SolarAim Blog`}
       description={description}
+      image={heroImage}
+      imageAlt={heroAlt || title}
       type="article"
       publishedTime={pubDate.toISOString()}
       modifiedTime={updatedDate?.toISOString()}
@@ -27,6 +33,7 @@ const { title, description, pubDate, updatedDate, heroImage, heroAlt } = Astro.p
       "description": description,
       "datePublished": pubDate.toISOString(),
       "dateModified": updatedDate?.toISOString() || pubDate.toISOString(),
+      "image": heroImage ? new URL(heroImage.src, Astro.site).toString() : undefined,
       "author": {
         "@type": "Organization",
         "name": "SolarAim Team"
@@ -62,9 +69,13 @@ const { title, description, pubDate, updatedDate, heroImage, heroAlt } = Astro.p
               <Image
                 src={heroImage}
                 alt={heroAlt || title}
-                width={800}
-                height={450}
+                width={heroDisplayWidth}
+                height={heroDisplayHeight}
+                format="webp"
+                quality={82}
                 loading="eager"
+                fetchpriority="high"
+                decoding="async"
               />
             </div>
           )}

@@ -2,7 +2,10 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import { Image } from 'astro:assets';
 import { GITHUB_URL } from '../consts';
+import appStoreHeroImage from '../assets/infographics/solaraim-app-store-hero-background.jpg';
+import releaseImage from '../assets/solaraim-mobile-app-release-update.jpg';
 
 const title = 'SolarAim Release Updates';
 const description = 'SolarAim mobile app availability and release updates.';
@@ -11,7 +14,12 @@ const description = 'SolarAim mobile app availability and release updates.';
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead
+      title={title}
+      description={description}
+      image={releaseImage}
+      imageAlt="SolarAim mobile app release update illustration for iOS and Android"
+    />
   </head>
   <body>
     <Header />
@@ -21,6 +29,41 @@ const description = 'SolarAim mobile app availability and release updates.';
         <p>
           SolarAim mobile apps are in release preparation. Use the links below to track availability.
         </p>
+        <Image
+          src={releaseImage}
+          alt="SolarAim mobile app release update illustration showing iOS and Android availability"
+          width={900}
+          height={502}
+          format="webp"
+          quality={82}
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          sizes="(max-width: 768px) 100vw, 900px"
+          class="release-image"
+        />
+      </section>
+
+      <section class="store-preview" aria-labelledby="store-preview-heading">
+        <div>
+          <h2 id="store-preview-heading">Built for quick field checks</h2>
+          <p>
+            The release build uses the same phone-flat-on-panel workflow shown throughout the site:
+            calculate the target, match tilt and direction, then save the reading.
+          </p>
+        </div>
+        <Image
+          src={appStoreHeroImage}
+          alt="SolarAim app store preview showing phone-based solar panel positioning guidance"
+          width={384}
+          height={688}
+          format="webp"
+          quality={80}
+          loading="lazy"
+          decoding="async"
+          sizes="(max-width: 768px) 100vw, 384px"
+          class="store-preview-image"
+        />
       </section>
 
       <section class="cards">
@@ -61,6 +104,37 @@ const description = 'SolarAim mobile app availability and release updates.';
     margin: 0 auto;
   }
 
+  .release-image {
+    display: block;
+    width: min(100%, 760px);
+    margin: 2rem auto 0;
+    border: 1px solid var(--warm-gray);
+    box-shadow: var(--box-shadow);
+  }
+
+  .store-preview {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
+  .store-preview h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .store-preview p {
+    color: var(--text-muted);
+  }
+
+  .store-preview-image {
+    width: min(100%, 384px);
+    justify-self: center;
+    border: 1px solid var(--warm-gray);
+    box-shadow: var(--box-shadow);
+  }
+
   .cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -78,6 +152,10 @@ const description = 'SolarAim mobile app availability and release updates.';
   }
 
   @media (max-width: 768px) {
+    .store-preview {
+      grid-template-columns: 1fr;
+    }
+
     .cards {
       grid-template-columns: 1fr;
     }

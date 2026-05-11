@@ -6,7 +6,7 @@ import HeaderLink from './HeaderLink.astro';
 <header>
   <nav>
     <a href="/sunseeker/" class="logo">
-      <span class="logo-icon">☀️</span>
+      <img src="/sunseeker/solaraim-logo-64.png" alt="" width="28" height="28" class="logo-icon" loading="eager" decoding="async" />
       <span class="logo-text">SolarAim</span>
     </a>
     <div class="nav-links">
@@ -68,7 +68,9 @@ import HeaderLink from './HeaderLink.astro';
   }
 
   .logo-icon {
-    font-size: 1.5rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
   }
 
   .nav-links {

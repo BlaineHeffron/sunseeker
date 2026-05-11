@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { Image } from 'astro:assets';
+import socialShareImage from '../../assets/solaraim-social-share-image.jpg';
 
 const title = 'Solar Energy Blog - Tips & Guides | SolarAim';
 const description = 'Expert guides on solar panel positioning, maintenance tips, and renewable energy insights. Learn how to maximize your solar energy production.';
@@ -12,12 +13,25 @@ const description = 'Expert guides on solar panel positioning, maintenance tips,
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const imageDimensionsForPost = (post: (typeof posts)[number], index: number) => {
+  const width = index === 0 ? 960 : 640;
+  const height = post.data.heroImage
+    ? Math.round((width * post.data.heroImage.height) / post.data.heroImage.width)
+    : index === 0 ? 540 : 360;
+  return { width, height };
+};
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead
+      title={title}
+      description={description}
+      image={socialShareImage}
+      imageAlt="SolarAim solar panel positioning guides and app preview"
+    />
   </head>
   <body>
     <Header />
@@ -36,11 +50,13 @@ const posts = (await getCollection('blog')).sort(
                   <Image
                     src={post.data.heroImage}
                     alt={post.data.heroAlt || post.data.title}
-                    width={index === 0 ? 960 : 640}
-                    height={index === 0 ? 540 : 360}
+                    width={imageDimensionsForPost(post, index).width}
+                    height={imageDimensionsForPost(post, index).height}
                     format="webp"
                     quality={78}
                     loading={index === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                    sizes={index === 0 ? '(max-width: 768px) 100vw, 960px' : '(max-width: 768px) 100vw, 320px'}
                   />
                 </div>
               )}
