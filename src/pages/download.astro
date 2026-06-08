@@ -3,12 +3,18 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { Image } from 'astro:assets';
-import { GITHUB_URL } from '../consts';
+import {
+  ANDROID_APK_URL,
+  IOS_BETA_AVAILABLE,
+  IOS_TESTFLIGHT_URL,
+  GITHUB_URL,
+} from '../consts';
 import appStoreHeroImage from '../assets/infographics/solaraim-app-store-hero-background.jpg';
 import releaseImage from '../assets/solaraim-mobile-app-release-update.jpg';
 
-const title = 'SolarAim Release Updates';
-const description = 'SolarAim mobile app availability and release updates.';
+const title = 'Download the SolarAim Beta';
+const description =
+  'Download the free SolarAim beta for Android and help test the solar panel angle calculator. iOS coming soon.';
 ---
 
 <!doctype html>
@@ -18,20 +24,32 @@ const description = 'SolarAim mobile app availability and release updates.';
       title={title}
       description={description}
       image={releaseImage}
-      imageAlt="SolarAim mobile app release update illustration for iOS and Android"
+      imageAlt="SolarAim mobile app beta download for Android"
     />
   </head>
   <body>
     <Header />
     <main class="download-page">
       <section class="hero">
-        <h1>SolarAim Release Updates</h1>
+        <span class="beta-badge">Public beta</span>
+        <h1>Download the SolarAim beta</h1>
         <p>
-          SolarAim mobile apps are in release preparation. Use the links below to track availability.
+          SolarAim is free and in open beta. Install it on your Android phone, point it at
+          your panels, and help us shake out the bugs before the store launch.
+        </p>
+        <a class="btn btn-primary btn-lg" href={ANDROID_APK_URL} rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+          </svg>
+          Download for Android (.apk)
+        </a>
+        <p class="hero-meta">
+          Android 7.0+ · free · no account required ·
+          <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">source &amp; releases on GitHub</a>
         </p>
         <Image
           src={releaseImage}
-          alt="SolarAim mobile app release update illustration showing iOS and Android availability"
+          alt="SolarAim mobile app beta showing iOS and Android availability"
           width={900}
           height={502}
           format="webp"
@@ -44,17 +62,80 @@ const description = 'SolarAim mobile app availability and release updates.';
         />
       </section>
 
+      <section class="cards">
+        <article class="card available" id="android">
+          <div class="card-head">
+            <h2>Android</h2>
+            <span class="status status-available">Available now</span>
+          </div>
+          <p>
+            Download the universal APK and install it directly. Works on phones and tablets
+            running Android 7.0 (Nougat) or newer.
+          </p>
+          <a class="btn btn-primary" href={ANDROID_APK_URL} rel="noopener">
+            Download .apk
+          </a>
+
+          <h3>How to install</h3>
+          <ol class="install-steps">
+            <li>Tap <strong>Download for Android</strong> above to save the <code>.apk</code> file.</li>
+            <li>
+              Open it from your notifications or the Downloads folder. Android will ask to allow
+              installs from this source &mdash; tap <strong>Settings</strong>, enable
+              <strong>Allow from this source</strong>, then go back.
+            </li>
+            <li>Tap <strong>Install</strong>, then <strong>Open</strong> to launch SolarAim.</li>
+          </ol>
+          <p class="note">
+            <strong>Heads up:</strong> this is an unreleased beta installed outside the Play Store,
+            so Play Protect may show a warning &mdash; choose <em>Install anyway</em>. Only download
+            the APK from this page or our
+            <a href={GITHUB_URL + '/releases'} target="_blank" rel="noopener noreferrer">GitHub releases</a>.
+          </p>
+        </article>
+
+        <article class="card" id="ios">
+          <div class="card-head">
+            <h2>iOS</h2>
+            <span class="status status-pending">Coming soon</span>
+          </div>
+          {IOS_BETA_AVAILABLE ? (
+            <>
+              <p>The iOS beta is live on TestFlight. Tap below to join.</p>
+              <a class="btn btn-primary" href={IOS_TESTFLIGHT_URL} target="_blank" rel="noopener noreferrer">
+                Join the TestFlight beta
+              </a>
+            </>
+          ) : (
+            <>
+              <p>
+                We don't have an iOS beta yet &mdash; Apple requires a signed TestFlight build, which
+                is still in the works. The Android beta has the same features in the meantime.
+              </p>
+              <a class="btn btn-secondary" href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+                Watch the repo for iOS updates
+              </a>
+            </>
+          )}
+        </article>
+      </section>
+
       <section class="store-preview" aria-labelledby="store-preview-heading">
         <div>
           <h2 id="store-preview-heading">Built for quick field checks</h2>
           <p>
-            The release build uses the same phone-flat-on-panel workflow shown throughout the site:
-            calculate the target, match tilt and direction, then save the reading.
+            The beta uses the same phone-flat-on-panel workflow shown throughout the site:
+            calculate the target angle, match tilt and direction, then save the reading.
+          </p>
+          <p class="note">
+            Hit a bug or have feedback? Open an issue on
+            <a href={GITHUB_URL + '/issues'} target="_blank" rel="noopener noreferrer">GitHub</a>
+            &mdash; it genuinely helps us get to a stable release.
           </p>
         </div>
         <Image
           src={appStoreHeroImage}
-          alt="SolarAim app store preview showing phone-based solar panel positioning guidance"
+          alt="SolarAim app preview showing phone-based solar panel positioning guidance"
           width={384}
           height={688}
           format="webp"
@@ -64,23 +145,6 @@ const description = 'SolarAim mobile app availability and release updates.';
           sizes="(max-width: 768px) 100vw, 384px"
           class="store-preview-image"
         />
-      </section>
-
-      <section class="cards">
-        <article class="card" id="ios">
-          <h2>iOS</h2>
-          <p>The App Store listing will be published here once review is complete.</p>
-          <a class="btn btn-primary" href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
-            Get Release Updates
-          </a>
-        </article>
-        <article class="card" id="android">
-          <h2>Android</h2>
-          <p>The Google Play listing will be published here once rollout is complete.</p>
-          <a class="btn btn-primary" href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
-            Get Release Updates
-          </a>
-        </article>
       </section>
     </main>
     <Footer />
@@ -98,10 +162,34 @@ const description = 'SolarAim mobile app availability and release updates.';
     padding: 3rem 0 2rem;
   }
 
+  .beta-badge {
+    display: inline-block;
+    background: var(--light-gold);
+    color: var(--text-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+  }
+
   .hero p {
     color: var(--text-muted);
     max-width: 680px;
-    margin: 0 auto;
+    margin: 0 auto 1.5rem;
+  }
+
+  .btn-lg {
+    font-size: 1.05rem;
+    padding: 0.85rem 1.75rem;
+    gap: 0.5rem;
+  }
+
+  .hero-meta {
+    font-size: 0.9rem;
+    margin-top: 1rem;
   }
 
   .release-image {
@@ -112,20 +200,103 @@ const description = 'SolarAim mobile app availability and release updates.';
     box-shadow: var(--box-shadow);
   }
 
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0 2rem;
+    align-items: start;
+  }
+
+  .card {
+    background: var(--soft-cream);
+    border: 1px solid var(--warm-gray);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .card.available {
+    border-color: var(--fresh-green, #81C784);
+    box-shadow: var(--box-shadow);
+  }
+
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-head h2 {
+    margin: 0;
+  }
+
+  .status {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .status-available {
+    background: var(--soft-sage, #C5E1A5);
+    color: #1b5e20;
+  }
+
+  .status-pending {
+    background: var(--warm-gray);
+    color: var(--text-muted);
+  }
+
+  .card p {
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  .install-steps {
+    color: var(--text-muted);
+    padding-left: 1.25rem;
+    margin: 0 0 1rem;
+  }
+
+  .install-steps li {
+    margin-bottom: 0.6rem;
+  }
+
+  .install-steps code {
+    background: var(--warm-gray);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+
+  .note {
+    font-size: 0.875rem;
+    background: var(--warm-gray);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0 !important;
+  }
+
   .store-preview {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
     gap: 2rem;
     align-items: center;
-    padding: 2rem 0;
+    padding: 2rem 0 3rem;
   }
 
   .store-preview h2 {
     margin-bottom: 0.75rem;
-  }
-
-  .store-preview p {
-    color: var(--text-muted);
   }
 
   .store-preview-image {
@@ -133,22 +304,6 @@ const description = 'SolarAim mobile app availability and release updates.';
     justify-self: center;
     border: 1px solid var(--warm-gray);
     box-shadow: var(--box-shadow);
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
-    padding: 1rem 0 2rem;
-  }
-
-  .cards .card h2 {
-    margin-bottom: 0.75rem;
-  }
-
-  .cards .card p {
-    color: var(--text-muted);
-    margin-bottom: 1.25rem;
   }
 
   @media (max-width: 768px) {

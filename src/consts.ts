@@ -34,9 +34,20 @@ export const BRAND_COLORS = {
   },
 };
 
-// App store links (update when available)
+// Download page anchors
 export const APP_STORE_URL = '/sunseeker/download#ios';
 export const PLAY_STORE_URL = '/sunseeker/download#android';
 
-// Social links
+// Direct Android beta APK. The app source repo is private, so the APK is published
+// as a public GitHub Release asset on this (public) sunseeker repo.
+// `releases/latest/download/...` always resolves to the newest published release.
+export const ANDROID_APK_URL =
+  'https://github.com/BlaineHeffron/sunseeker/releases/latest/download/SolarAim-android-universal.apk';
+
+// iOS beta is not yet available (no free public sideload path; TestFlight pending).
+export const IOS_BETA_AVAILABLE = false;
+export const IOS_TESTFLIGHT_URL = '';
+
+// Social links. GITHUB_URL is the public repo that also hosts releases + the public
+// issue tracker for beta feedback (the app source repo is private).
 export const GITHUB_URL = 'https://github.com/BlaineHeffron/sunseeker';

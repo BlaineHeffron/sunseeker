@@ -22,8 +22,8 @@ test.describe('Landing Page Tests', () => {
     await expect(page.locator('.hero h1')).toContainText('Figure out the right angle');
 
     // Check CTA buttons
-    await expect(page.locator('a:has-text("Get release updates")').first()).toBeVisible();
-    await expect(page.locator('a:has-text("Android release updates")').first()).toBeVisible();
+    await expect(page.locator('a:has-text("Download for Android")').first()).toBeVisible();
+    await expect(page.locator('a:has-text("iOS (coming soon)")').first()).toBeVisible();
 
     await takeScreenshot(page, '01-landing-hero');
   });
@@ -359,11 +359,11 @@ test.describe('Link Tests', () => {
     await page.goto(`${BASE}/`);
 
     // Check app store buttons have href
-    const appStoreButton = page.locator('.hero-buttons a:has-text("Get release updates")');
-    await expect(appStoreButton).toHaveAttribute('href', '/sunseeker/download#ios');
-
-    const playStoreButton = page.locator('.hero-buttons a:has-text("Android release updates")');
+    const playStoreButton = page.locator('.hero-buttons a:has-text("Download for Android")');
     await expect(playStoreButton).toHaveAttribute('href', '/sunseeker/download#android');
+
+    const appStoreButton = page.locator('.hero-buttons a:has-text("iOS (coming soon)")');
+    await expect(appStoreButton).toHaveAttribute('href', '/sunseeker/download#ios');
 
     await takeScreenshot(page, '32-app-store-links');
   });
@@ -378,8 +378,17 @@ test.describe('Link Tests', () => {
 
   test('should have working download page', async ({ page }) => {
     await page.goto(`${BASE}/download`);
-    await expect(page.locator('h1:has-text("SolarAim Release Updates")')).toBeVisible();
+    await expect(page.locator('h1:has-text("Download the SolarAim beta")')).toBeVisible();
     await expect(page.locator('#ios')).toBeVisible();
     await expect(page.locator('#android')).toBeVisible();
+
+    // Android beta links to the real APK release asset
+    const apkLink = page.locator(
+      '#android a[href$="SolarAim-android-universal.apk"]'
+    );
+    await expect(apkLink.first()).toBeVisible();
+
+    // iOS is marked coming soon until a TestFlight build exists
+    await expect(page.locator('#ios .status-pending')).toBeVisible();
   });
 });

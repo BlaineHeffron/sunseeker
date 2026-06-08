@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "assets:generate": "node scripts/generate-assets.mjs",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "astro sync && tsc --noEmit",
     "test": "playwright test",
     "test:ci": "playwright test --workers=1",
     "validate": "npm run typecheck && npm run build && npm run test:ci",
